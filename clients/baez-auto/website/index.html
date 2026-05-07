@@ -47,6 +47,7 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 5vw; height: 96px;
       background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border);
+      will-change: transform;
     }
     .logo { font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
     .nav-center { display: flex; align-items: center; gap: 2.5rem; }
@@ -166,6 +167,7 @@
       .nav-center, .nav-right { display: none; }
       .hamburger { display: flex; }
       .above-fold { height: auto; }
+      html { scroll-behavior: auto; }
       #hero { justify-content: center; margin-top: 96px; padding: 52px 5vw 40px; min-height: 55vh; }
       .hero-bg { background-position: center 70%; }
       .hero-bg::after { background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.9) 100%); }
