@@ -45,14 +45,14 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5vw; height: 64px;
+      padding: 0 5vw; height: 96px;
       background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border);
     }
-    .logo { font-family: 'Oswald', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
+    .logo { font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
     .nav-center { display: flex; align-items: center; gap: 2.5rem; }
-    .nav-center a { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); transition: color .2s; }
+    .nav-center a { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); transition: color .2s; }
     .nav-center a:hover { color: var(--yellow); }
-    .nav-phone { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; color: var(--yellow); letter-spacing: .04em; }
+    .nav-phone { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--yellow); letter-spacing: .04em; }
 
     .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; height: 2px; background: var(--white); border-radius: 2px; transition: transform .25s, opacity .25s; }
@@ -60,29 +60,44 @@
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #050505; border-bottom: 1px solid var(--border); padding: 1.5rem 5vw 2rem; z-index: 99; flex-direction: column; gap: 1.4rem; }
+    .mobile-menu { display: none; position: fixed; top: 96px; left: 0; right: 0; background: #050505; border-bottom: 1px solid var(--border); padding: 1.5rem 5vw 2rem; z-index: 99; flex-direction: column; gap: 1.4rem; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
     .mobile-menu .mm-phone { color: var(--yellow); font-size: 1rem; }
     .mobile-menu .btn-yellow { align-self: flex-start; }
 
+    /* ── Nav Dropdown & Hours ── */
+    .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+    .nav-hours { font-size: .88rem; color: var(--muted); letter-spacing: .04em; white-space: nowrap; }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .dd-trigger { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); cursor: default; display: flex; align-items: center; gap: .3rem; transition: color .2s; }
+    .nav-dropdown:hover .dd-trigger { color: var(--yellow); }
+    .dd-arrow { font-size: .55rem; opacity: .7; }
+    .nav-dd-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 18px; z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu { display: block; }
+    .nav-dd-inner { background: #080808; border: 1px solid var(--border); border-radius: 6px; padding: .5rem 0; min-width: 210px; box-shadow: 0 8px 32px rgba(0,0,0,.7); }
+    .nav-dd-inner a { display: block; padding: .65rem 1.3rem; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); transition: color .15s; white-space: nowrap; }
+    .nav-dd-inner a:hover { color: var(--yellow); }
+    .mm-sub { font-size: .78rem !important; opacity: .65; padding-left: 1.4rem; }
+
+    /* ── Above-fold wrapper ── */
+    .above-fold { display: flex; flex-direction: column; height: 100vh; }
+
     /* ── Hero ── */
-    #hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 100px 5vw 90px; overflow: hidden; }
+    #hero { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; padding: 116px 5vw 30px; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: url('assets/building_back.jpg') center center / cover no-repeat; z-index: 0; }
     .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.28) 100%); }
     .hero-content { position: relative; z-index: 1; max-width: 620px; }
-    h1 { font-family: 'Oswald', sans-serif; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 700; line-height: 1; letter-spacing: .01em; text-transform: uppercase; margin-bottom: 1rem; }
+    h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 700; line-height: 1; letter-spacing: .01em; text-transform: uppercase; margin-bottom: .75rem; }
     h1 .hl { color: var(--yellow); }
-    .hero-sub { font-size: 1rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.75; }
+    .hero-sub { font-size: .95rem; color: var(--muted); margin-bottom: .9rem; line-height: 1.7; }
     .hero-sub strong { color: var(--white); }
-    .hero-trust { font-size: .875rem; color: var(--muted); margin-bottom: .6rem; font-weight: 500; }
+    .hero-trust { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; font-weight: 500; }
     .hero-trust strong { color: var(--white); }
-    .hero-stars { display: flex; align-items: center; gap: .6rem; margin-bottom: 2rem; }
+    .hero-stars { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.4rem; }
     .stars { color: var(--yellow); font-size: 1.1rem; letter-spacing: .04em; }
     .review-count { font-size: .875rem; color: var(--muted); }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .hours-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; background: rgba(0,0,0,0.72); border-top: 1px solid var(--border); padding: .75rem 5vw; display: flex; gap: 2.5rem; flex-wrap: wrap; font-size: .8rem; color: var(--muted); }
-    .hours-bar strong { color: var(--white); font-weight: 600; }
 
     /* ── Mission ── */
     #mission { background: var(--blue); padding: 80px 5vw; text-align: center; }
@@ -100,15 +115,15 @@
     .why-card p { font-size: .9rem; color: var(--muted); line-height: 1.75; }
 
     /* ── Services preview ── */
-    #services-preview { background: var(--black); padding: 80px 5vw; }
-    #services-preview h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: .8rem; }
+    #services-preview { background: var(--black); padding: 18px 5vw 22px; }
+    #services-preview h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: .4rem; }
     #services-preview h2 .hl { color: var(--yellow); }
-    .preview-sub { color: var(--muted); font-size: 1rem; margin-bottom: 3rem; }
-    .services-thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem; }
-    .service-thumb { background: var(--card); padding: 1.8rem 1.5rem; transition: background .2s; }
-    .service-thumb:hover { background: #181818; }
-    .service-icon { width: 40px; height: 40px; }
-    .thumb-name { font-family: 'Oswald', sans-serif; font-size: .95rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; margin-top: .75rem; }
+    .preview-sub { color: var(--muted); font-size: .85rem; margin-bottom: 1.2rem; }
+    .services-thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 0; }
+    .service-thumb { background: var(--card); padding: 1rem 1rem; border-radius: 6px; border: 1px solid var(--border); transition: background .2s, border-color .2s; display: flex; align-items: center; gap: .75rem; color: inherit; text-decoration: none; }
+    .service-thumb:hover { background: #181818; border-color: rgba(255,218,15,0.3); }
+    .service-icon { width: 28px; height: 28px; flex-shrink: 0; }
+    .thumb-name { font-family: 'Oswald', sans-serif; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
 
     /* ── Testimonial ── */
     #testimonial { background: var(--blue); padding: 60px 5vw; text-align: center; }
@@ -142,11 +157,13 @@
       .services-thumb-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
-      .nav-center, .nav-phone { display: none; }
+      nav { height: 64px; }
+      .mobile-menu { top: 64px; }
+      .nav-center, .nav-right { display: none; }
       .hamburger { display: flex; }
-      #hero { justify-content: center; padding: 100px 5vw 100px; }
+      .above-fold { height: auto; }
+      #hero { justify-content: center; padding: 80px 5vw 40px; min-height: 55vh; }
       .hero-bg::after { background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.9) 100%); }
-      .hours-bar { display: none; }
       .why-grid { grid-template-columns: 1fr; }
       .services-thumb-grid { grid-template-columns: repeat(2, 1fr); }
       #contact-info { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -160,20 +177,44 @@
   <nav>
     <div class="logo">BAEZ</div>
     <div class="nav-center">
-      <a href="services.html">Services</a>
-      <a href="#contact-info">Book Online</a>
+      <div class="nav-dropdown">
+        <span class="dd-trigger">Services <span class="dd-arrow">▾</span></span>
+        <div class="nav-dd-menu">
+          <div class="nav-dd-inner">
+            <a href="brakes.html">Brakes</a>
+            <a href="ac-service.html">A/C Service</a>
+            <a href="oil-changes.html">Oil Changes</a>
+            <a href="engine.html">Engine Service</a>
+            <a href="tire-service.html">Tire Service</a>
+            <a href="battery.html">Battery Service</a>
+            <a href="suspension.html">Suspension Service</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener">Book Online</a>
     </div>
-    <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
+    <div class="nav-right">
+      <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
+      <span class="nav-hours">Mon–Fri 9–7pm &nbsp;·&nbsp; Sat 9–4pm &nbsp;·&nbsp; Sun Closed</span>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="services.html" onclick="closeMenu()">Services</a>
+    <a href="services.html" onclick="closeMenu()">All Services</a>
+    <a href="brakes.html" class="mm-sub" onclick="closeMenu()">↳ Brakes</a>
+    <a href="ac-service.html" class="mm-sub" onclick="closeMenu()">↳ A/C Service</a>
+    <a href="oil-changes.html" class="mm-sub" onclick="closeMenu()">↳ Oil Changes</a>
+    <a href="engine.html" class="mm-sub" onclick="closeMenu()">↳ Engine Service</a>
+    <a href="tire-service.html" class="mm-sub" onclick="closeMenu()">↳ Tire Service</a>
+    <a href="battery.html" class="mm-sub" onclick="closeMenu()">↳ Battery Service</a>
+    <a href="suspension.html" class="mm-sub" onclick="closeMenu()">↳ Suspension Service</a>
     <a href="#contact-info" onclick="closeMenu()">Book Online</a>
     <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
     <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()">Call Now!</a>
   </div>
 
+  <div class="above-fold">
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
@@ -182,82 +223,44 @@
       <p class="hero-trust"><strong>Family-Run</strong> &nbsp;•&nbsp; <strong>Bilingual</strong> &nbsp;•&nbsp; No Hidden Fees</p>
       <div class="hero-stars">
         <span class="stars">★★★★★</span>
-        <span class="review-count">160+ Reviews</span>
+        <span class="review-count">220+ Reviews</span>
       </div>
       <div class="hero-btns">
         <a href="#contact-info" class="btn-outline">Book Online</a>
         <a href="tel:6302768596" class="btn-yellow">Call Now!</a>
       </div>
     </div>
-    <div class="hours-bar">
-      <span><strong>Mon–Fri</strong> &nbsp;9am – 7pm</span>
-      <span><strong>Saturday</strong> &nbsp;9am – 4pm</span>
-      <span><strong>Sunday</strong> &nbsp;Closed</span>
-    </div>
   </section>
 
-  <section id="mission">
-    <h2>AUTO REPAIR DONE RIGHT.</h2>
-    <p>At Baez Auto, we believe putting the customer first drives everything we do — from transparent communication to quality work that keeps you safely on the road.</p>
-  </section>
-
-  <section id="why">
-    <p class="section-label">Why We're Different</p>
-    <h2>What Sets Us Apart</h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-num">01</div>
-        <h3>Transparent Pricing</h3>
-        <p>No hidden rates. No unexpected charges. You know exactly what you're paying before any work begins — every time.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">02</div>
-        <h3>Documentation of Every Issue</h3>
-        <p>We take photos of everything we find. You see exactly what needs to be repaired, not just our word for it.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">03</div>
-        <h3>Accurate Assessments</h3>
-        <p>Our recommendations come from real diagnostic findings — not assumptions, not upsells.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="services-preview">
+   <section id="services-preview">
     <p class="section-label">Services</p>
     <h2>WHICH SERVICE DO <span class="hl">YOU</span> NEED?</h2>
     <p class="preview-sub">From oil changes to engine repair — we handle it all under one roof.</p>
     <div class="services-thumb-grid">
-      <div class="service-thumb">
+      <a href="brakes.html" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="7"/>
           <line x1="24" y1="6" x2="24" y2="17"/><line x1="24" y1="31" x2="24" y2="42"/>
           <line x1="6" y1="24" x2="17" y2="24"/><line x1="31" y1="24" x2="42" y2="24"/>
         </svg>
         <div class="thumb-name">Brakes</div>
-      </div>
-      <div class="service-thumb">
+      </a>
+      <a href="ac-service.html" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <line x1="24" y1="4" x2="24" y2="44"/><line x1="4" y1="24" x2="44" y2="24"/>
           <line x1="9.4" y1="9.4" x2="38.6" y2="38.6"/><line x1="38.6" y1="9.4" x2="9.4" y2="38.6"/>
           <polyline points="18,8 24,14 30,8"/><polyline points="18,40 24,34 30,40"/>
         </svg>
         <div class="thumb-name">A/C Service</div>
-      </div>
-      <div class="service-thumb">
+      </a>
+      <a href="oil-changes.html" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M24 6 C20 13 10 24 10 31 a14 14 0 0 0 28 0 C38 24 28 13 24 6z"/>
           <path d="M17 35 Q22 30 27 35"/>
         </svg>
         <div class="thumb-name">Oil Changes</div>
-      </div>
-      <div class="service-thumb">
-        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="26,4 10,28 24,28 22,44 38,20 24,20"/>
-        </svg>
-        <div class="thumb-name">Check Engine Light</div>
-      </div>
-      <div class="service-thumb">
+      </a>
+      <a href="engine.html" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="8"/>
           <rect x="20" y="2" width="8" height="8" rx="1"/><rect x="20" y="38" width="8" height="8" rx="1"/>
@@ -266,8 +269,8 @@
           <line x1="10" y1="24" x2="16" y2="24"/><line x1="32" y1="24" x2="38" y2="24"/>
         </svg>
         <div class="thumb-name">Engine Service</div>
-      </div>
-      <div class="service-thumb">
+      </a>
+      <a href="tire-service.html" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="8"/>
           <line x1="24" y1="5" x2="24" y2="16"/><line x1="24" y1="32" x2="24" y2="43"/>
@@ -276,8 +279,8 @@
           <line x1="39.5" y1="8.5" x2="31.7" y2="16.3"/><line x1="16.3" y1="31.7" x2="8.5" y2="39.5"/>
         </svg>
         <div class="thumb-name">Tire Service</div>
-      </div>
-      <div class="service-thumb">
+      </a>
+      <a href="battery.html" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <rect x="4" y="14" width="40" height="24" rx="2"/>
           <line x1="14" y1="10" x2="14" y2="14"/><line x1="10" y1="12" x2="18" y2="12"/>
@@ -285,8 +288,8 @@
           <line x1="24" y1="22" x2="24" y2="30"/><line x1="20" y1="26" x2="28" y2="26"/>
         </svg>
         <div class="thumb-name">Battery Service</div>
-      </div>
-      <div class="service-thumb">
+      </a>
+      <a href="suspension.html" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="24" y1="4" x2="24" y2="10"/>
           <polyline points="14,10 34,10 34,16 14,16 14,22 34,22 34,28 14,28"/>
@@ -294,10 +297,10 @@
           <line x1="16" y1="44" x2="32" y2="44"/>
         </svg>
         <div class="thumb-name">Suspension Service</div>
-      </div>
+      </a>
     </div>
-    <a href="services.html" class="btn-yellow">See All Services &rarr;</a>
   </section>
+  </div>
 
   <section id="testimonial">
     <div class="stars-lg">★★★★★</div>
