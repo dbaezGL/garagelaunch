@@ -1,0 +1,4 @@
+Yellow: #FFDA0F
+Blue: #203351
+White: #FFFFFF
+Black: #000000
