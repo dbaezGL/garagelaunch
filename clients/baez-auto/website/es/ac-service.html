@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicio de A/C — Baez Auto Repair | Elgin, IL</title>
+  <meta name="description" content="Inspección, recarga y reparación de A/C en Elgin, IL. Encontramos la fuga y la reparamos — no solo recargamos y lo mandamos de vuelta. Llame al (630) 276-8596." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .hero-bg { background: url('../../assets/building_back.jpg') center 30% / cover no-repeat; }
+    .lang-toggle { font-size: .72rem !important; font-weight: 800 !important; letter-spacing: .12em !important; border: 1px solid rgba(255,255,255,0.28) !important; border-radius: 3px; padding: .25rem .55rem !important; color: var(--muted) !important; transition: border-color .2s, color .2s !important; text-transform: uppercase !important; }
+    .lang-toggle:hover { border-color: var(--yellow) !important; color: var(--yellow) !important; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">BAEZ</a>
+    <div class="nav-center">
+      <div class="nav-dropdown">
+        <span class="dd-trigger">Servicios <span class="dd-arrow">▾</span></span>
+        <div class="nav-dd-menu">
+          <div class="nav-dd-inner">
+            <a href="brakes.html">Frenos</a>
+            <a href="ac-service.html">Servicio de A/C</a>
+            <a href="oil-changes.html">Cambios de Aceite</a>
+            <a href="engine.html">Servicio de Motor</a>
+            <a href="tire-service.html">Servicio de Llantas</a>
+            <a href="battery.html">Servicio de Batería</a>
+            <a href="suspension.html">Servicio de Suspensión</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener">Reservar</a>
+      <a href="../ac-service.html" class="lang-toggle">EN</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
+      <span class="nav-hours">Lun–Vie 9–7pm &nbsp;·&nbsp; Sáb 9–4pm &nbsp;·&nbsp; Dom Cerrado</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMenu()">Todos los Servicios</a>
+    <a href="brakes.html" class="mm-sub" onclick="closeMenu()">↳ Frenos</a>
+    <a href="ac-service.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de A/C</a>
+    <a href="oil-changes.html" class="mm-sub" onclick="closeMenu()">↳ Cambios de Aceite</a>
+    <a href="engine.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de Motor</a>
+    <a href="tire-service.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de Llantas</a>
+    <a href="battery.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de Batería</a>
+    <a href="suspension.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de Suspensión</a>
+    <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" onclick="closeMenu()">Reservar en Línea</a>
+    <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
+    <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()">¡Llame Ahora!</a>
+  </div>
+
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow">Servicio de A/C — Elgin, IL</p>
+        <h1>MANTÉNGASE FRESCO. NOS ENCARGAMOS DE SU A/C.</h1>
+        <p class="hero-sub">Inspección, recarga y reparación de A/C hecha bien. Encontramos la fuga y la reparamos — no solo recargamos y lo mandamos de vuelta.</p>
+        <div class="hero-btns">
+          <a href="tel:6302768596" class="btn-yellow">¡Llame Ahora!</a>
+          <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" class="btn-outline">Reservar en Línea</a>
+        </div>
+        <div class="hero-stars">
+          <span class="stars">★★★★★</span>
+          <span class="review-count">220+ Reseñas</span>
+        </div>
+      </div>
+      <div class="hero-services">
+        <p class="hero-services-label">Lo Que Hacemos</p>
+        <div class="hero-services-grid">
+          <div class="hero-service-item">
+            <div class="check">✓</div>
+            <h3>Prueba de Presión</h3>
+            <p>Verificamos los niveles de refrigerante y la presión para diagnosticar el problema real — no solo adivinar y recargar.</p>
+          </div>
+          <div class="hero-service-item">
+            <div class="check">✓</div>
+            <h3>Recarga de Refrigerante</h3>
+            <p>Recargado a las especificaciones del fabricante. La cantidad correcta importa — demasiado también es un problema.</p>
+          </div>
+          <div class="hero-service-item">
+            <div class="check">✓</div>
+            <h3>Inspección del Compresor</h3>
+            <p>El corazón del sistema. Lo probamos a fondo antes de recomendar un reemplazo.</p>
+          </div>
+          <div class="hero-service-item">
+            <div class="check">✓</div>
+            <h3>Detección de Fugas</h3>
+            <p>La mayoría de fallas de A/C comienzan con una fuga. La encontramos para que no regrese cada verano a recargar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signs">
+    <p class="section-label">Señales de Advertencia</p>
+    <h2>SEÑALES DE QUE NECESITA SERVICIO DE A/C</h2>
+    <div class="signs-list">
+      <div class="sign-item"><span class="sign-dot">▸</span>Aire caliente o tibio saliendo de las rejillas</div>
+      <div class="sign-item"><span class="sign-dot">▸</span>El A/C tarda demasiado en enfriar el habitáculo</div>
+      <div class="sign-item"><span class="sign-dot">▸</span>Olor inusual cuando el A/C está encendido</div>
+      <div class="sign-item"><span class="sign-dot">▸</span>Clic o ruido fuerte cuando el A/C enciende</div>
+      <div class="sign-item"><span class="sign-dot">▸</span>Las ventanas se empañan más de lo usual</div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <h2>¿LISTO PARA TRAERLO?</h2>
+    <a href="tel:6302768596" class="btn-yellow-lg">Llame al (630) 276-8596</a>
+  </section>
+
+  <section id="visit">
+    <div class="visit-left">
+      <h3>Visítenos</h3>
+      <p><a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener">1919 Larkin Avenue, Elgin, IL 60123</a><br /><a href="tel:6302768596">(630) 276-8596</a><br />Lun–Vie 9am–7pm &nbsp;|&nbsp; Sáb 9am–4pm &nbsp;|&nbsp; Dom Cerrado</p>
+    </div>
+    <a href="tel:6302768596" class="btn-yellow">¡Llame Ahora!</a>
+  </section>
+
+  <footer>
+    <div>
+      <div class="footer-logo">BAEZ</div>
+      <div class="footer-links">
+        <a href="index.html">Servicios</a>
+        <a href="index.html#contact-info">Ubicación</a>
+        <a href="index.html#contact-info">Contáctenos</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 | Todos los Derechos Reservados | Elgin, IL</p>
+  </footer>
+  <script>
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+    function closeMenu() { btn.classList.remove('open'); menu.classList.remove('open'); }
+  </script>
+</body>
+</html>
