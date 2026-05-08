@@ -42,7 +42,7 @@
 
     /* ── Hero ── */
     #hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 5vw 80px; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: url('assets/jose-baez.jpg') center center / cover no-repeat; z-index: 0; }
+    .hero-bg { position: absolute; inset: 0; background: url('/assets/jose-baez.jpg') center center / cover no-repeat; z-index: 0; }
     .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.82); }
     .hero-content { position: relative; z-index: 1; max-width: 580px; }
 
@@ -117,7 +117,7 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="services.html" onclick="closeMenu()">Services</a>
+    <a href="/services/" onclick="closeMenu()">Services</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
     <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
   </div>
@@ -220,7 +220,7 @@
     <div>
       <div class="footer-logo">BAEZ</div>
       <div class="footer-links">
-        <a href="services.html">Services</a>
+        <a href="/services/">Services</a>
         <a href="#contact">Location</a>
         <a href="#contact">Contact Us</a>
       </div>
