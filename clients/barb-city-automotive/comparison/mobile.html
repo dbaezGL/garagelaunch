@@ -107,6 +107,9 @@
     }
 
     /* ── Status bar ── */
+    /* RULE: status bar bg must match the site's nav/header color.
+       Light header → black icons. Dark header → white icons.
+       Set .side.before/.side.after overrides per client below. */
     .phone-status {
       position: absolute;
       top: 0; left: 0; right: 0;
@@ -117,15 +120,25 @@
       justify-content: space-between;
       padding: 14px 22px 0;
       pointer-events: none;
-      /* Transparent — icons are black to match white nav below */
     }
     .status-time {
       font-size: 13px;
       font-weight: 700;
-      color: #000;
       letter-spacing: -.3px;
       font-family: 'Inter', sans-serif;
     }
+
+    /* BEFORE — site blocks iframe, phone bg is black → white icons */
+    .side.before .phone-status { background: transparent; }
+    .side.before .status-time { color: #fff; }
+    .side.before .phone-status svg { fill: #fff; }
+    .side.before .phone-status svg path { stroke: #fff; }
+
+    /* AFTER — Barb City nav is white → white bg, black icons */
+    .side.after .phone-status { background: #ffffff; }
+    .side.after .status-time { color: #000; }
+    .side.after .phone-status svg { fill: #000; }
+    .side.after .phone-status svg path { stroke: #000; }
     .status-icons {
       display: flex;
       align-items: center;
