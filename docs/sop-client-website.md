@@ -33,7 +33,7 @@ Client has no website or a very basic one. Use the BZ template.
 /bz-screenshot path/to/screenshot.png
 ```
 
-Outputs to `tools/themes/bz/output/{shop-slug}/`. Move to `clients/{shop-slug}/website/` when done.
+Outputs to `web-tools/themes/bz/output/{shop-slug}/`. Move to `clients/{shop-slug}/website/` when done.
 
 ### Path B — Client has an established site/brand to preserve
 Client has a real website with recognizable colors, button styles, copy. Use transform.
@@ -198,4 +198,4 @@ clients/
 | BZ Screenshot | `/bz-screenshot path` | New site from screenshot |
 | Transform | `/transform path` | Rebuild preserving client brand |
 
-Templates live in `tools/themes/bz/templates/`.
+Templates live in `web-tools/themes/bz/templates/`.
