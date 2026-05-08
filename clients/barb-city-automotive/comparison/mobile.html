@@ -150,9 +150,10 @@
     /* Phone inner width: 310 - 2*2 = 306px. Viewport: 430px. Scale = 306/430 = 0.712 */
     .screen {
       position: absolute;
-      inset: 0;
+      top: 52px; /* starts below status bar */
+      left: 0; right: 0; bottom: 0;
       overflow: hidden;
-      border-radius: 48px;
+      border-radius: 0 0 46px 46px;
     }
     .screen-placeholder {
       position: absolute;
