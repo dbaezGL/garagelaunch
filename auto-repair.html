@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baez Auto Repair — Elgin, IL | Honest Same-Day Service</title>
+  <meta name="description" content="Need your car fixed reliably? Baez Auto Repair in Elgin, IL. Honest service, same-day repairs. Suspension, Engine, Brakes & more. Call (630) 276-8596." />
+  <!-- Google Ads conversion tracking goes here -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFDA0F;
+      --blue:   #203351;
+      --black:  #000000;
+      --dark:   #0d0d0d;
+      --card:   #111111;
+      --border: rgba(255,255,255,0.09);
+      --white:  #FFFFFF;
+      --muted:  rgba(255,255,255,0.65);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Nav ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 64px; background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border); }
+    .logo { font-family: 'Oswald', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
+    .nav-phone { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; color: var(--yellow); letter-spacing: .04em; }
+    .hamburger { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; height: 2px; background: var(--white); border-radius: 2px; transition: transform .25s, opacity .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #050505; border-bottom: 1px solid var(--border); padding: 1.5rem 5vw 2rem; z-index: 99; flex-direction: column; gap: 1.4rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
+    .mobile-menu .mm-phone { color: var(--yellow); font-size: 1rem; }
+
+    /* ── Hero ── */
+    #hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 5vw 80px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: url('assets/jose-baez.jpg') center center / cover no-repeat; z-index: 0; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.82); }
+    .hero-content { position: relative; z-index: 1; max-width: 580px; }
+
+    .location-badge { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: var(--white); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; padding: .45rem 1.1rem; border-radius: 100px; margin-bottom: 1.5rem; }
+
+    h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.8rem, 8vw, 5rem); font-weight: 700; line-height: 1; letter-spacing: .01em; text-transform: uppercase; margin-bottom: 1.2rem; }
+    h1 .hl { color: var(--yellow); }
+
+    .hero-body { font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; max-width: 500px; }
+
+    .btn-call { display: block; background: var(--yellow); color: var(--black); padding: 1.1rem 2rem; border-radius: 3px; font-weight: 800; font-size: 1.15rem; text-transform: uppercase; letter-spacing: .08em; text-align: center; width: 100%; max-width: 420px; transition: filter .2s, transform .15s; margin-bottom: 1.5rem; }
+    .btn-call:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    .hero-stars { display: flex; align-items: center; gap: .6rem; }
+    .stars { color: var(--yellow); font-size: 1.2rem; letter-spacing: .06em; }
+    .review-count { font-size: .9rem; color: var(--muted); font-weight: 500; }
+
+    /* ── Contact section ── */
+    #contact { background: var(--blue); padding: 70px 5vw; }
+    #contact h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 2rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; }
+    .contact-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: .1rem; }
+    .contact-item a { font-size: 1rem; color: var(--white); transition: color .2s; }
+    .contact-item a:hover { color: var(--yellow); }
+    .contact-item span { font-size: 1rem; color: var(--white); }
+
+    /* ── Hours section ── */
+    #hours { background: var(--blue); border-top: 1px solid rgba(255,255,255,0.1); padding: 60px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    #hours h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 1.5rem; }
+    .hours-list p { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 2.1; }
+    .building-photo { width: 100%; border-radius: 8px; object-fit: cover; max-height: 280px; }
+
+    /* ── Testimonial ── */
+    #testimonial { background: var(--dark); padding: 70px 5vw; }
+    #testimonial h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 2.5rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .testimonial-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; gap: .75rem; }
+    .tc-stars { color: var(--yellow); font-size: 1rem; letter-spacing: .06em; }
+    .tc-text { font-size: .95rem; color: rgba(255,255,255,0.85); line-height: 1.75; flex: 1; }
+    .tc-author { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
+    .tc-time { font-size: .75rem; color: rgba(255,255,255,0.4); }
+    @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+    /* ── CTA strip ── */
+    #cta-strip { background: var(--blue); border-top: 1px solid rgba(255,255,255,0.1); padding: 60px 5vw; text-align: center; }
+    #cta-strip h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 1.5rem; }
+    .btn-book { display: inline-block; background: var(--yellow); color: var(--black); padding: 1rem 2.5rem; border-radius: 3px; font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; transition: filter .2s, transform .15s; }
+    .btn-book:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    /* ── Footer ── */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem 5vw; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; margin-bottom: .5rem; }
+    .footer-links { display: flex; flex-direction: column; gap: .5rem; }
+    .footer-links a { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--white); transition: color .2s; }
+    .footer-links a:hover { color: var(--yellow); }
+    .footer-copy { font-size: .72rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      #hours { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; }
+      .footer-copy { align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">BAEZ</a>
+    <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="services.html" onclick="closeMenu()">Services</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="location-badge">Elgin Residents</div>
+      <h1>NEED YOUR CAR FIXED <span class="hl">RELIABLY?</span></h1>
+      <p class="hero-body">Baez Auto has been providing honest service in Elgin for years. Call us today and we'll get you in. Suspension, Engine, Brakes — whatever you need.</p>
+      <a href="tel:6302768596" class="btn-call">Call Now — (630) 276-8596</a>
+      <div class="hero-stars">
+        <span class="stars">★★★★★</span>
+        <span class="review-count">220+ Reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>CONTACT</h2>
+    <div class="contact-item">
+      <span class="contact-icon">📍</span>
+      <a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener">1919 Larkin Avenue, Elgin, IL 60123</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">📞</span>
+      <a href="tel:6302768596">(630) 276-8596</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">✉️</span>
+      <a href="mailto:baezauto1@gmail.com">baezauto1@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- Hours -->
+  <section id="hours">
+    <div class="hours-list">
+      <h2>HOURS</h2>
+      <p>
+        Mon–Fri &nbsp;&nbsp;&nbsp;9am – 7pm<br />
+        Saturday &nbsp;&nbsp;9am – 4pm<br />
+        Sunday &nbsp;&nbsp;&nbsp;&nbsp;Closed
+      </p>
+    </div>
+    <div>
+      <img src="assets/building_back.jpg" alt="Baez Auto Repair Shop — Elgin, IL" class="building-photo" />
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section id="testimonial">
+    <p class="section-label">Google Reviews</p>
+    <h2>What Elgin Drivers Are Saying</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Oscar was kind from the 1st moment I showed up for help with a battery install and then fixing my son's A/C system. He was honest, very patient explaining everything to both my son and I and felt trustworthy. We will be back for future needs and I will refer next time I am asked for a mechanic."</p>
+        <div>
+          <div class="tc-author">Sandra Vizcarra</div>
+          <div class="tc-time">1 week ago</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"I've had my oil changed there, and the service was quick and efficient. The team is knowledgeable and takes the time to answer any questions or concerns you have about your car."</p>
+        <div>
+          <div class="tc-author">Sree Srii</div>
+          <div class="tc-time">2 weeks ago</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Amazing — let me know my car's issues and gave me alternatives. Friendly staff and quick inspections."</p>
+        <div>
+          <div class="tc-author">Tre</div>
+          <div class="tc-time">4 weeks ago</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"This is a really good place. Oscar really knows what he's doing. Please go here — I think he's the best in Elgin. Also very fair."</p>
+        <div>
+          <div class="tc-author">Devonne Taylor</div>
+          <div class="tc-time">4 weeks ago</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta-strip">
+    <h2>CONTACT OUR TEAM</h2>
+    <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" class="btn-book">Book Online</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <div class="footer-logo">BAEZ</div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="#contact">Location</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 | All Rights Reserved | Elgin, IL</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+    function closeMenu() { btn.classList.remove('open'); menu.classList.remove('open'); }
+  </script>
+</body>
+</html>

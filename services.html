@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Baez Auto Repair | Elgin, IL</title>
+  <meta name="description" content="Auto repair services in Elgin, IL — Brakes, A/C, Oil Changes, Engine, Suspension, Tires & Battery. Call (630) 276-8596." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFDA0F;
+      --blue:   #203351;
+      --black:  #000000;
+      --dark:   #0d0d0d;
+      --card:   #111111;
+      --border: rgba(255,255,255,0.09);
+      --white:  #FFFFFF;
+      --muted:  rgba(255,255,255,0.62);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .btn-yellow { display: inline-block; background: var(--yellow); color: var(--black); padding: .85rem 2rem; border-radius: 3px; font-weight: 800; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; border: none; cursor: pointer; transition: filter .2s, transform .15s; }
+    .btn-yellow:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    /* ── Nav ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 96px; background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border); }
+    .logo { font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
+    .nav-center { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-center a { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); transition: color .2s; }
+    .nav-center a:hover, .nav-center a.active { color: var(--yellow); }
+    .nav-phone { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--yellow); letter-spacing: .04em; }
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; height: 2px; background: var(--white); border-radius: 2px; transition: transform .25s, opacity .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 96px; left: 0; right: 0; background: #050505; border-bottom: 1px solid var(--border); padding: 1.5rem 5vw 2rem; z-index: 99; flex-direction: column; gap: 1.4rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
+    .mobile-menu .mm-phone { color: var(--yellow); font-size: 1rem; }
+    .mobile-menu .btn-yellow { align-self: flex-start; }
+
+    /* ── Nav Dropdown & Hours ── */
+    .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+    .nav-hours { font-size: .88rem; color: var(--muted); letter-spacing: .04em; white-space: nowrap; }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .dd-trigger { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); cursor: default; display: flex; align-items: center; gap: .3rem; transition: color .2s; }
+    .nav-dropdown:hover .dd-trigger { color: var(--yellow); }
+    .dd-arrow { font-size: .55rem; opacity: .7; }
+    .nav-dd-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 18px; z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu { display: block; }
+    .nav-dd-inner { background: #080808; border: 1px solid var(--border); border-radius: 6px; padding: .5rem 0; min-width: 210px; box-shadow: 0 8px 32px rgba(0,0,0,.7); }
+    .nav-dd-inner a { display: block; padding: .65rem 1.3rem; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); transition: color .15s; white-space: nowrap; }
+    .nav-dd-inner a:hover { color: var(--yellow); }
+    .mm-sub { font-size: .78rem !important; opacity: .65; padding-left: 1.4rem; }
+
+    /* ── Page hero ── */
+    #page-hero { position: relative; min-height: 52vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 120px 5vw 60px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: url('assets/building_back.jpg') center 40% / cover no-repeat; z-index: 0; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.78); }
+    .hero-content { position: relative; z-index: 1; }
+    h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: 1.05; text-transform: uppercase; letter-spacing: .02em; }
+    h1 .hl { color: var(--yellow); }
+    .hero-sub-text { font-size: 1rem; color: var(--muted); margin-top: .75rem; }
+
+    /* ── Services grid ── */
+    #services { padding: 80px 5vw; background: var(--dark); }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .service-card { background: var(--card); padding: 2.2rem 1.8rem; border-radius: 6px; border: 1px solid var(--border); transition: background .2s, border-color .2s; display: flex; flex-direction: column; gap: 1rem; text-decoration: none; color: inherit; }
+    .service-card:hover { background: #181818; border-color: rgba(255,218,15,0.3); }
+    .service-card .learn-more { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--yellow); margin-top: auto; }
+    .service-icon { width: 44px; height: 44px; flex-shrink: 0; }
+    .service-name { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--yellow); }
+    .service-desc { font-size: .875rem; color: var(--muted); line-height: 1.75; flex: 1; }
+
+    /* ── CTA ── */
+    #cta { background: var(--blue); padding: 70px 5vw; text-align: center; }
+    #cta h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 1.5rem; }
+    .btn-yellow-lg { display: inline-block; background: var(--yellow); color: var(--black); padding: 1.1rem 3rem; border-radius: 3px; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: .08em; transition: filter .2s, transform .15s; }
+    .btn-yellow-lg:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    /* ── Visit Us strip ── */
+    #visit { background: var(--dark); border-top: 1px solid var(--border); padding: 50px 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .visit-left h3 { font-family: 'Oswald', sans-serif; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--yellow); margin-bottom: .6rem; }
+    .visit-left p { font-size: .9rem; color: var(--muted); line-height: 1.8; }
+    .visit-left a { color: var(--muted); transition: color .2s; }
+    .visit-left a:hover { color: var(--yellow); }
+
+    /* ── Footer ── */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem 5vw; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; margin-bottom: .5rem; }
+    .footer-links { display: flex; flex-direction: column; gap: .5rem; }
+    .footer-links a { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--white); transition: color .2s; }
+    .footer-links a:hover { color: var(--yellow); }
+    .footer-copy { font-size: .72rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .nav-center, .nav-right { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      #visit { flex-direction: column; }
+      footer { flex-direction: column; }
+      .footer-copy { align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">BAEZ</a>
+    <div class="nav-center">
+      <div class="nav-dropdown">
+        <span class="dd-trigger">Services <span class="dd-arrow">▾</span></span>
+        <div class="nav-dd-menu">
+          <div class="nav-dd-inner">
+            <a href="brakes.html">Brakes</a>
+            <a href="ac-service.html">A/C Service</a>
+            <a href="oil-changes.html">Oil Changes</a>
+            <a href="engine.html">Engine Service</a>
+            <a href="tire-service.html">Tire Service</a>
+            <a href="battery.html">Battery Service</a>
+            <a href="suspension.html">Suspension Service</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener">Book Online</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
+      <span class="nav-hours">Mon–Fri 9–7pm &nbsp;·&nbsp; Sat 9–4pm &nbsp;·&nbsp; Sun Closed</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="services.html" onclick="closeMenu()">All Services</a>
+    <a href="brakes.html" class="mm-sub" onclick="closeMenu()">↳ Brakes</a>
+    <a href="ac-service.html" class="mm-sub" onclick="closeMenu()">↳ A/C Service</a>
+    <a href="oil-changes.html" class="mm-sub" onclick="closeMenu()">↳ Oil Changes</a>
+    <a href="engine.html" class="mm-sub" onclick="closeMenu()">↳ Engine Service</a>
+    <a href="tire-service.html" class="mm-sub" onclick="closeMenu()">↳ Tire Service</a>
+    <a href="battery.html" class="mm-sub" onclick="closeMenu()">↳ Battery Service</a>
+    <a href="suspension.html" class="mm-sub" onclick="closeMenu()">↳ Suspension Service</a>
+    <a href="index.html#contact-info" onclick="closeMenu()">Book Online</a>
+    <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
+    <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()">Call Now!</a>
+  </div>
+
+  <section id="page-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>WHICH SERVICE DO <span class="hl">YOU</span> NEED?</h1>
+      <p class="hero-sub-text">Honest diagnostics. Same-day service. No hidden fees.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="services-grid">
+
+      <a href="brakes.html" class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="7"/>
+          <line x1="24" y1="6" x2="24" y2="17"/><line x1="24" y1="31" x2="24" y2="42"/>
+          <line x1="6" y1="24" x2="17" y2="24"/><line x1="31" y1="24" x2="42" y2="24"/>
+        </svg>
+        <div class="service-name">Brakes</div>
+        <p class="service-desc">We're committed to providing top-notch brake inspections and service to ensure your driving safety and performance. Don't wait on brakes.</p>
+        <span class="learn-more">Learn More &rarr;</span>
+      </a>
+
+      <a href="ac-service.html" class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <line x1="24" y1="4" x2="24" y2="44"/><line x1="4" y1="24" x2="44" y2="24"/>
+          <line x1="9.4" y1="9.4" x2="38.6" y2="38.6"/><line x1="38.6" y1="9.4" x2="9.4" y2="38.6"/>
+          <polyline points="18,8 24,14 30,8"/><polyline points="18,40 24,34 30,40"/>
+        </svg>
+        <div class="service-name">A/C Service</div>
+        <p class="service-desc">Ensure your vehicle is safe and comfortable. Our technicians diagnose and repair A/C issues fast — so you're not sweating through summer.</p>
+        <span class="learn-more">Learn More &rarr;</span>
+      </a>
+
+      <a href="oil-changes.html" class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M24 6 C20 13 10 24 10 31 a14 14 0 0 0 28 0 C38 24 28 13 24 6z"/>
+          <path d="M17 35 Q22 30 27 35"/>
+        </svg>
+        <div class="service-name">Oil Changes</div>
+        <p class="service-desc">Fast, effective oil changes that keep your engine running smoothly. We use quality oil and filter every time — no shortcuts.</p>
+        <span class="learn-more">Learn More &rarr;</span>
+      </a>
+
+      <a href="engine.html" class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <circle cx="24" cy="24" r="8"/>
+          <rect x="20" y="2" width="8" height="8" rx="1"/><rect x="20" y="38" width="8" height="8" rx="1"/>
+          <rect x="2" y="20" width="8" height="8" rx="1"/><rect x="38" y="20" width="8" height="8" rx="1"/>
+          <line x1="24" y1="10" x2="24" y2="16"/><line x1="24" y1="32" x2="24" y2="38"/>
+          <line x1="10" y1="24" x2="16" y2="24"/><line x1="32" y1="24" x2="38" y2="24"/>
+        </svg>
+        <div class="service-name">Engine Service</div>
+        <p class="service-desc">Full engine diagnostics and repair designed to keep your vehicle performing at its best. We get to the root — not just the symptom.</p>
+        <span class="learn-more">Learn More &rarr;</span>
+      </a>
+
+      <a href="tire-service.html" class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="8"/>
+          <line x1="24" y1="5" x2="24" y2="16"/><line x1="24" y1="32" x2="24" y2="43"/>
+          <line x1="5" y1="24" x2="16" y2="24"/><line x1="32" y1="24" x2="43" y2="24"/>
+          <line x1="8.5" y1="8.5" x2="16.3" y2="16.3"/><line x1="31.7" y1="31.7" x2="39.5" y2="39.5"/>
+          <line x1="39.5" y1="8.5" x2="31.7" y2="16.3"/><line x1="16.3" y1="31.7" x2="8.5" y2="39.5"/>
+        </svg>
+        <div class="service-name">Tire Service</div>
+        <p class="service-desc">Mounting, balancing, rotation, and flat repair. Get your tires road-worthy fast with reliable service on every vehicle.</p>
+        <span class="learn-more">Learn More &rarr;</span>
+      </a>
+
+      <a href="battery.html" class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <rect x="4" y="14" width="40" height="24" rx="2"/>
+          <line x1="14" y1="10" x2="14" y2="14"/><line x1="10" y1="12" x2="18" y2="12"/>
+          <line x1="34" y1="10" x2="34" y2="14"/>
+          <line x1="24" y1="22" x2="24" y2="30"/><line x1="20" y1="26" x2="28" y2="26"/>
+        </svg>
+        <div class="service-name">Battery Service</div>
+        <p class="service-desc">We diagnose and replace faulty batteries to keep you moving. Quick testing, honest recommendations — no upsell.</p>
+        <span class="learn-more">Learn More &rarr;</span>
+      </a>
+
+      <a href="suspension.html" class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="24" y1="4" x2="24" y2="10"/>
+          <polyline points="14,10 34,10 34,16 14,16 14,22 34,22 34,28 14,28"/>
+          <line x1="24" y1="28" x2="24" y2="44"/>
+          <line x1="16" y1="44" x2="32" y2="44"/>
+        </svg>
+        <div class="service-name">Suspension Service</div>
+        <p class="service-desc">Pulling to one side? Rough ride? We diagnose suspension issues with honest assessments and repair what actually needs fixing.</p>
+        <span class="learn-more">Learn More &rarr;</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="cta">
+    <h2>READY TO BRING YOUR CAR IN?</h2>
+    <a href="tel:6302768596" class="btn-yellow-lg">Call Now! (630) 276-8596</a>
+  </section>
+
+  <section id="visit">
+    <div class="visit-left">
+      <h3>Visit Us</h3>
+      <p>
+        <a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener">1919 Larkin Avenue, Elgin, IL 60123</a><br />
+        <a href="tel:6302768596">(630) 276-8596</a><br />
+        Mon–Fri 9am–7pm &nbsp;|&nbsp; Sat 9am–4pm &nbsp;|&nbsp; Sun Closed
+      </p>
+    </div>
+    <a href="tel:6302768596" class="btn-yellow">Call Now!</a>
+  </section>
+
+  <footer>
+    <div>
+      <div class="footer-logo">BAEZ</div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="index.html#contact-info">Location</a>
+        <a href="index.html#contact-info">Contact Us</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 | All Rights Reserved | Elgin, IL</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+    function closeMenu() { btn.classList.remove('open'); menu.classList.remove('open'); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baez Auto Repair — Elgin, IL</title>
+  <meta name="description" content="Taller mecánico familiar en Elgin, IL. Precios transparentes, servicio el mismo día, sin cargos ocultos. Frenos, Motor, A/C, Cambios de Aceite y más. Llame al (630) 276-8596." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #FFDA0F;
+      --blue:   #203351;
+      --black:  #000000;
+      --dark:   #0d0d0d;
+      --card:   #111111;
+      --border: rgba(255,255,255,0.09);
+      --white:  #FFFFFF;
+      --muted:  rgba(255,255,255,0.62);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .btn-yellow {
+      display: inline-block; background: var(--yellow); color: var(--black);
+      padding: .85rem 2rem; border-radius: 3px; font-weight: 800; font-size: .95rem;
+      text-transform: uppercase; letter-spacing: .06em; border: none; cursor: pointer;
+      transition: filter .2s, transform .15s;
+    }
+    .btn-yellow:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-block; background: transparent; color: var(--white);
+      padding: .85rem 2rem; border-radius: 3px; border: 2px solid rgba(255,255,255,0.45);
+      font-weight: 700; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw; height: 96px;
+      background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border);
+    }
+    .logo { font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
+    .nav-center { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-center a { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); transition: color .2s; }
+    .nav-center a:hover { color: var(--yellow); }
+    .nav-phone { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--yellow); letter-spacing: .04em; }
+
+    .lang-toggle { font-size: .72rem !important; font-weight: 800 !important; letter-spacing: .12em !important; border: 1px solid rgba(255,255,255,0.28) !important; border-radius: 3px; padding: .25rem .55rem !important; color: var(--muted) !important; transition: border-color .2s, color .2s !important; text-transform: uppercase !important; }
+    .lang-toggle:hover { border-color: var(--yellow) !important; color: var(--yellow) !important; }
+
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; height: 2px; background: var(--white); border-radius: 2px; transition: transform .25s, opacity .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu { display: none; position: fixed; top: 96px; left: 0; right: 0; background: #050505; border-bottom: 1px solid var(--border); padding: 1.5rem 5vw 2rem; z-index: 99; flex-direction: column; gap: 1.4rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
+    .mobile-menu .mm-phone { color: var(--yellow); font-size: 1rem; }
+    .mobile-menu .btn-yellow { align-self: flex-start; }
+
+    /* ── Nav Dropdown & Hours ── */
+    .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+    .nav-hours { font-size: .88rem; color: var(--muted); letter-spacing: .04em; white-space: nowrap; }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .dd-trigger { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); cursor: default; display: flex; align-items: center; gap: .3rem; transition: color .2s; }
+    .nav-dropdown:hover .dd-trigger { color: var(--yellow); }
+    .dd-arrow { font-size: .55rem; opacity: .7; }
+    .nav-dd-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 18px; z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu { display: block; }
+    .nav-dd-inner { background: #080808; border: 1px solid var(--border); border-radius: 6px; padding: .5rem 0; min-width: 210px; box-shadow: 0 8px 32px rgba(0,0,0,.7); }
+    .nav-dd-inner a { display: block; padding: .65rem 1.3rem; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); transition: color .15s; white-space: nowrap; }
+    .nav-dd-inner a:hover { color: var(--yellow); }
+    .mm-sub { font-size: .78rem !important; opacity: .65; padding-left: 1.4rem; }
+
+    /* ── Above-fold wrapper ── */
+    .above-fold { display: flex; flex-direction: column; height: 100vh; }
+
+    /* ── Hero ── */
+    #hero { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; padding: 116px 5vw 30px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: url('../assets/building_back.jpg') center center / cover no-repeat; z-index: 0; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.28) 100%); }
+    .hero-content { position: relative; z-index: 1; max-width: 620px; }
+    h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 700; line-height: 1; letter-spacing: .01em; text-transform: uppercase; margin-bottom: .75rem; }
+    h1 .hl { color: var(--yellow); }
+    .hero-sub { font-size: .95rem; color: var(--muted); margin-bottom: .9rem; line-height: 1.7; }
+    .hero-sub strong { color: var(--white); }
+    .hero-trust { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; font-weight: 500; }
+    .hero-trust strong { color: var(--white); }
+    .hero-stars { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.4rem; }
+    .stars { color: var(--yellow); font-size: 1.1rem; letter-spacing: .04em; }
+    .review-count { font-size: .875rem; color: var(--muted); }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── Services preview ── */
+    #services-preview { background: var(--black); padding: 18px 5vw 22px; }
+    #services-preview h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: .4rem; }
+    #services-preview h2 .hl { color: var(--yellow); }
+    .preview-sub { color: var(--muted); font-size: .85rem; margin-bottom: 1.2rem; }
+    .services-thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 0; }
+    .service-thumb { background: var(--card); padding: 1rem 1rem; border-radius: 6px; border: 1px solid var(--border); transition: background .2s, border-color .2s; display: flex; align-items: center; gap: .75rem; color: inherit; text-decoration: none; }
+    .service-thumb:hover { background: #181818; border-color: rgba(255,218,15,0.3); }
+    .service-icon { width: 28px; height: 28px; flex-shrink: 0; }
+    .thumb-name { font-family: 'Oswald', sans-serif; font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+
+    /* ── Testimonials ── */
+    #testimonial { background: var(--blue); padding: 80px 5vw; }
+    #testimonial h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 2.5rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .testimonial-card { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; gap: .75rem; }
+    .tc-stars { color: var(--yellow); font-size: 1rem; letter-spacing: .06em; }
+    .tc-text { font-size: .95rem; color: rgba(255,255,255,0.85); line-height: 1.75; flex: 1; }
+    .tc-author { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
+    .tc-time { font-size: .72rem; color: rgba(255,255,255,0.4); margin-top: .15rem; }
+
+    /* ── Contact ── */
+    #contact-info { background: var(--dark); padding: 80px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    #contact-info h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 2rem; }
+    .contact-row { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: 1rem; }
+    .ci-label { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; color: var(--yellow); min-width: 72px; padding-top: .15rem; }
+    .ci-val { font-size: .95rem; color: var(--muted); line-height: 1.6; }
+    .ci-val a { color: var(--muted); transition: color .2s; }
+    .ci-val a:hover { color: var(--yellow); }
+    .hours-block { margin-top: 2rem; }
+    .hours-block h3 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .75rem; }
+    .hours-block p { font-size: .9rem; color: var(--muted); line-height: 2; }
+    .location-map { width: 100%; height: 340px; border-radius: 8px; border: none; display: block; filter: grayscale(30%); }
+    .section-label { font-size: .68rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--yellow); margin-bottom: 1rem; }
+
+    /* ── Footer ── */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem 5vw; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; margin-bottom: .5rem; }
+    .footer-links { display: flex; flex-direction: column; gap: .5rem; }
+    .footer-links a { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--white); transition: color .2s; }
+    .footer-links a:hover { color: var(--yellow); }
+    .footer-copy { font-size: .72rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .services-thumb-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-center, .nav-right { display: none; }
+      .hamburger { display: flex; }
+      .above-fold { height: auto; }
+      #hero { justify-content: center; padding: 80px 5vw 40px; min-height: 55vh; }
+      .hero-bg::after { background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.9) 100%); }
+      .services-thumb-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      #contact-info { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { flex-direction: column; }
+      .footer-copy { align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">BAEZ</div>
+    <div class="nav-center">
+      <div class="nav-dropdown">
+        <span class="dd-trigger">Servicios <span class="dd-arrow">▾</span></span>
+        <div class="nav-dd-menu">
+          <div class="nav-dd-inner">
+            <a href="../brakes.html">Frenos</a>
+            <a href="../ac-service.html">Servicio de A/C</a>
+            <a href="../oil-changes.html">Cambios de Aceite</a>
+            <a href="../engine.html">Servicio de Motor</a>
+            <a href="../tire-service.html">Servicio de Llantas</a>
+            <a href="../battery.html">Servicio de Batería</a>
+            <a href="../suspension.html">Servicio de Suspensión</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener">Reservar</a>
+      <a href="../index.html" class="lang-toggle">EN</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
+      <span class="nav-hours">Lun–Vie 9–7pm &nbsp;·&nbsp; Sáb 9–4pm &nbsp;·&nbsp; Dom Cerrado</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../services.html" onclick="closeMenu()">Todos los Servicios</a>
+    <a href="../brakes.html" class="mm-sub" onclick="closeMenu()">↳ Frenos</a>
+    <a href="../ac-service.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de A/C</a>
+    <a href="../oil-changes.html" class="mm-sub" onclick="closeMenu()">↳ Cambios de Aceite</a>
+    <a href="../engine.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de Motor</a>
+    <a href="../tire-service.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de Llantas</a>
+    <a href="../battery.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de Batería</a>
+    <a href="../suspension.html" class="mm-sub" onclick="closeMenu()">↳ Servicio de Suspensión</a>
+    <a href="#contact-info" onclick="closeMenu()">Reservar en Línea</a>
+    <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
+    <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()">¡Llame Ahora!</a>
+  </div>
+
+  <div class="above-fold">
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>EL TALLER MÁS <span class="hl">CONFIABLE</span> DE ELGIN.</h1>
+      <p class="hero-sub">Reparación Automotriz Moderna y Transparente — <strong>Servicio el Mismo Día</strong> con Fotos y Sin Cargos Ocultos.</p>
+      <p class="hero-trust"><strong>Negocio Familiar</strong> &nbsp;•&nbsp; <strong>Bilingüe</strong> &nbsp;•&nbsp; Sin Cargos Ocultos</p>
+      <div class="hero-stars">
+        <span class="stars">★★★★★</span>
+        <span class="review-count">220+ Reseñas</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact-info" class="btn-outline">Reservar en Línea</a>
+        <a href="tel:6302768596" class="btn-yellow">¡Llame Ahora!</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services-preview">
+    <p class="section-label">Servicios</p>
+    <h2>¿QUÉ SERVICIO <span class="hl">NECESITA</span>?</h2>
+    <p class="preview-sub">Desde cambios de aceite hasta reparación de motor — lo hacemos todo bajo un mismo techo.</p>
+    <div class="services-thumb-grid">
+      <a href="brakes.html" class="service-thumb">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="7"/>
+          <line x1="24" y1="6" x2="24" y2="17"/><line x1="24" y1="31" x2="24" y2="42"/>
+          <line x1="6" y1="24" x2="17" y2="24"/><line x1="31" y1="24" x2="42" y2="24"/>
+        </svg>
+        <div class="thumb-name">Frenos</div>
+      </a>
+      <a href="ac-service.html" class="service-thumb">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <line x1="24" y1="4" x2="24" y2="44"/><line x1="4" y1="24" x2="44" y2="24"/>
+          <line x1="9.4" y1="9.4" x2="38.6" y2="38.6"/><line x1="38.6" y1="9.4" x2="9.4" y2="38.6"/>
+          <polyline points="18,8 24,14 30,8"/><polyline points="18,40 24,34 30,40"/>
+        </svg>
+        <div class="thumb-name">Servicio de A/C</div>
+      </a>
+      <a href="oil-changes.html" class="service-thumb">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M24 6 C20 13 10 24 10 31 a14 14 0 0 0 28 0 C38 24 28 13 24 6z"/>
+          <path d="M17 35 Q22 30 27 35"/>
+        </svg>
+        <div class="thumb-name">Cambios de Aceite</div>
+      </a>
+      <a href="engine.html" class="service-thumb">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <circle cx="24" cy="24" r="8"/>
+          <rect x="20" y="2" width="8" height="8" rx="1"/><rect x="20" y="38" width="8" height="8" rx="1"/>
+          <rect x="2" y="20" width="8" height="8" rx="1"/><rect x="38" y="20" width="8" height="8" rx="1"/>
+          <line x1="24" y1="10" x2="24" y2="16"/><line x1="24" y1="32" x2="24" y2="38"/>
+          <line x1="10" y1="24" x2="16" y2="24"/><line x1="32" y1="24" x2="38" y2="24"/>
+        </svg>
+        <div class="thumb-name">Servicio de Motor</div>
+      </a>
+      <a href="tire-service.html" class="service-thumb">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="8"/>
+          <line x1="24" y1="5" x2="24" y2="16"/><line x1="24" y1="32" x2="24" y2="43"/>
+          <line x1="5" y1="24" x2="16" y2="24"/><line x1="32" y1="24" x2="43" y2="24"/>
+          <line x1="8.5" y1="8.5" x2="16.3" y2="16.3"/><line x1="31.7" y1="31.7" x2="39.5" y2="39.5"/>
+          <line x1="39.5" y1="8.5" x2="31.7" y2="16.3"/><line x1="16.3" y1="31.7" x2="8.5" y2="39.5"/>
+        </svg>
+        <div class="thumb-name">Servicio de Llantas</div>
+      </a>
+      <a href="battery.html" class="service-thumb">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
+          <rect x="4" y="14" width="40" height="24" rx="2"/>
+          <line x1="14" y1="10" x2="14" y2="14"/><line x1="10" y1="12" x2="18" y2="12"/>
+          <line x1="34" y1="10" x2="34" y2="14"/>
+          <line x1="24" y1="22" x2="24" y2="30"/><line x1="20" y1="26" x2="28" y2="26"/>
+        </svg>
+        <div class="thumb-name">Servicio de Batería</div>
+      </a>
+      <a href="suspension.html" class="service-thumb">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="24" y1="4" x2="24" y2="10"/>
+          <polyline points="14,10 34,10 34,16 14,16 14,22 34,22 34,28 14,28"/>
+          <line x1="24" y1="28" x2="24" y2="44"/>
+          <line x1="16" y1="44" x2="32" y2="44"/>
+        </svg>
+        <div class="thumb-name">Servicio de Suspensión</div>
+      </a>
+    </div>
+  </section>
+  </div>
+
+
+  <section id="contact-info">
+    <div>
+      <p class="section-label">Visítenos</p>
+      <h2>CONTACTO</h2>
+      <div class="contact-row">
+        <span class="ci-label">Dirección</span>
+        <span class="ci-val"><a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener">1919 Larkin Avenue, Elgin, IL 60123</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="ci-label">Teléfono</span>
+        <span class="ci-val"><a href="tel:6302768596">(630) 276-8596</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="ci-label">Correo</span>
+        <span class="ci-val"><a href="mailto:baezauto1@gmail.com">baezauto1@gmail.com</a></span>
+      </div>
+      <div class="hours-block">
+        <h3>Horario</h3>
+        <p>Lun–Vie &nbsp;&nbsp;&nbsp;9am – 7pm<br />Sábado &nbsp;&nbsp;9am – 4pm<br />Domingo &nbsp;Cerrado</p>
+      </div>
+      <br />
+      <a href="tel:6302768596" class="btn-yellow" style="margin-top:1rem">¡Llame Ahora!</a>
+    </div>
+    <div>
+      <iframe class="location-map" src="https://maps.google.com/maps?q=1919+Larkin+Ave,+Elgin,+IL+60123&output=embed&z=15" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Baez Auto Repair — 1919 Larkin Ave, Elgin IL"></iframe>
+    </div>
+  </section>
+
+  <section id="testimonial">
+    <p class="section-label">Reseñas de Google</p>
+    <h2>Lo Que Dicen Los Clientes de Elgin</h2>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Oscar fue amable desde el primer momento en que llegué para que me ayudaran con la instalación de una batería y luego arreglando el sistema de A/C de mi hijo. Fue honesto, muy paciente explicando todo a mi hijo y a mí, y nos pareció confiable. Volveremos para futuras necesidades."</p>
+        <div>
+          <div class="tc-author">Sandra Vizcarra</div>
+          <div class="tc-time">hace 1 semana</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Me han cambiado el aceite ahí, y el servicio fue rápido y eficiente. El equipo tiene conocimiento y se toma el tiempo para responder cualquier pregunta o inquietud que tenga sobre su auto."</p>
+        <div>
+          <div class="tc-author">Sree Srii</div>
+          <div class="tc-time">hace 2 semanas</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Increíble — me explicaron los problemas de mi auto y me dieron alternativas. Personal amable e inspecciones rápidas."</p>
+        <div>
+          <div class="tc-author">Tre</div>
+          <div class="tc-time">hace 4 semanas</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Este es un muy buen lugar. Oscar realmente sabe lo que hace. Por favor vengan aquí — creo que es el mejor en Elgin. También es muy justo."</p>
+        <div>
+          <div class="tc-author">Devonne Taylor</div>
+          <div class="tc-time">hace 4 semanas</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer>
+    <div>
+      <div class="footer-logo">BAEZ</div>
+      <div class="footer-links">
+        <a href="../services.html">Servicios</a>
+        <a href="#contact-info">Ubicación</a>
+        <a href="#contact-info">Contáctenos</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 | Todos los Derechos Reservados | Elgin, IL</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+    function closeMenu() { btn.classList.remove('open'); menu.classList.remove('open'); }
+  </script>
+</body>
+</html>
