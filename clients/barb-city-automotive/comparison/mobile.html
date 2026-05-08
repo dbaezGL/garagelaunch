@@ -7,46 +7,206 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --accent:  #FFDA0F;
-      --bg:      #0a0a0a;
-      --white:   #ffffff;
-      --muted:   rgba(255,255,255,0.45);
+      --accent: #FFDA0F;
+      --bg:     #0a0a0a;
+      --white:  #ffffff;
+      --muted:  rgba(255,255,255,0.4);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 5vw; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 5vw;
+      gap: 0;
+    }
 
-    .gl-logo { font-family: 'Oswald', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; text-align: center; }
-    .headline { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 6vw, 3.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; text-align: center; line-height: 1; margin-bottom: .75rem; }
+    /* ── Header ── */
+    .gl-logo { font-family: 'Oswald', sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; text-align: center; }
+    .headline { font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; text-align: center; line-height: 1; margin-bottom: .6rem; }
     .headline .hl { color: var(--accent); }
-    .client-name { text-align: center; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); margin-bottom: 3.5rem; }
+    .client-name { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); margin-bottom: 3rem; text-align: center; }
 
-    .comparison { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; width: 100%; max-width: 860px; }
-    .side { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; flex: 1; min-width: 240px; }
-    .side-label { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
+    /* ── Comparison row ── */
+    .comparison {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .side { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
+    .side-label { font-family: 'Oswald', sans-serif; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; }
     .side-label.before { color: var(--muted); }
     .side-label.after  { color: var(--accent); }
 
-    .phone-wrap { position: relative; width: 260px; flex-shrink: 0; }
-    .phone { width: 100%; aspect-ratio: 9/19; background: #1a1a1a; border-radius: 36px; border: 7px solid #2a2a2a; overflow: hidden; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.7), inset 0 0 0 1px rgba(255,255,255,0.06); }
-    .phone::before { content: ''; position: absolute; right: -10px; top: 22%; width: 4px; height: 12%; background: #2a2a2a; border-radius: 2px; z-index: 5; }
-    .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 26px; background: #1a1a1a; border-radius: 0 0 18px 18px; z-index: 10; }
+    /* ── iPhone mockup ── */
+    .iphone {
+      position: relative;
+      width: 280px;
+      /* iPhone 14 Pro aspect ratio: 393×852 */
+      aspect-ratio: 393 / 852;
+      background: #050505;
+      border-radius: 48px;
+      border: 2px solid #2c2c2c;
+      box-shadow:
+        inset 0 0 0 1.5px rgba(255,255,255,0.07),
+        0 0 0 1px rgba(0,0,0,0.8),
+        0 32px 80px rgba(0,0,0,0.9),
+        0 8px 24px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
 
-    .iframe-wrap { position: absolute; inset: 0; overflow: hidden; }
-    .iframe-wrap iframe { width: 390px; height: 844px; border: none; transform: scale(0.631); transform-origin: top left; pointer-events: none; display: block; }
+    /* Metallic edge highlight */
+    .iphone::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 30;
+    }
 
-    .side.after .phone { border-color: var(--accent); box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px var(--accent), 0 0 40px rgba(255,218,15,0.15); }
+    /* Dynamic Island */
+    .island {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 108px;
+      height: 32px;
+      background: #000;
+      border-radius: 20px;
+      z-index: 20;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
+    }
 
-    .arrow { font-size: 2.5rem; color: var(--accent); flex-shrink: 0; align-self: center; margin-top: 2rem; }
-    .after-badge { background: var(--accent); color: var(--bg); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; padding: .45rem 1.2rem; border-radius: 100px; }
-    .tagline { margin-top: 3.5rem; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); text-align: center; }
+    /* Side button (volume / power) */
+    .iphone-btn-left {
+      position: absolute;
+      left: -4px;
+      top: 22%;
+      width: 3px;
+      height: 8%;
+      background: #2c2c2c;
+      border-radius: 2px 0 0 2px;
+      z-index: 5;
+    }
+    .iphone-btn-left::before {
+      content: '';
+      position: absolute;
+      top: -200%;
+      left: 0;
+      width: 100%;
+      height: 170%;
+      background: #2c2c2c;
+      border-radius: 2px 0 0 2px;
+    }
+    .iphone-btn-right {
+      position: absolute;
+      right: -4px;
+      top: 26%;
+      width: 3px;
+      height: 13%;
+      background: #2c2c2c;
+      border-radius: 0 2px 2px 0;
+      z-index: 5;
+    }
+
+    /* ── Iframe inside phone ── */
+    /* Inner width: 280px - 2px*2 = 276px. Target viewport: 390px. Scale = 276/390 = 0.708 */
+    .screen {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 46px;
+    }
+    .screen iframe {
+      width: 390px;
+      height: 844px;
+      border: none;
+      transform: scale(0.708);
+      transform-origin: top left;
+      pointer-events: none;
+      display: block;
+    }
+
+    /* Placeholder shown when iframe is blocked */
+    .screen-placeholder {
+      position: absolute;
+      inset: 0;
+      background: #e8e8e8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      z-index: 0;
+      border-radius: 46px;
+    }
+    .screen-placeholder span {
+      font-size: .65rem;
+      color: #888;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+    .screen-placeholder .ph-icon { font-size: 2rem; opacity: .3; }
+    /* iframe sits on top — placeholder only shows if iframe is blank/blocked */
+    .screen iframe { position: relative; z-index: 1; }
+
+    /* ── After glow ── */
+    .side.after .iphone {
+      border-color: var(--accent);
+      box-shadow:
+        inset 0 0 0 1.5px rgba(255,218,15,0.12),
+        0 0 0 1px rgba(255,218,15,0.4),
+        0 0 50px rgba(255,218,15,0.18),
+        0 32px 80px rgba(0,0,0,0.9);
+    }
+
+    /* ── Arrow ── */
+    .arrow {
+      font-size: 2rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      opacity: .8;
+    }
+
+    /* ── Badge ── */
+    .after-badge {
+      background: var(--accent);
+      color: var(--bg);
+      font-size: .65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      padding: .4rem 1.1rem;
+      border-radius: 100px;
+    }
+
+    /* ── Footer ── */
+    .tagline { margin-top: 3rem; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); text-align: center; }
     .tagline span { color: var(--accent); }
 
-    @media (max-width: 640px) {
-      .comparison { gap: 2rem; }
-      .arrow { transform: rotate(90deg); margin: 0; }
-      .phone-wrap { width: 220px; }
-      .iframe-wrap iframe { transform: scale(0.528); }
+    @media (max-width: 680px) {
+      .comparison { flex-direction: column; gap: 1.5rem; }
+      .arrow { transform: rotate(90deg); }
+      .iphone { width: 240px; }
+      /* Recalc: inner = 236px. Scale = 236/390 = 0.605 */
+      .screen iframe { transform: scale(0.605); }
     }
   </style>
 </head>
@@ -58,28 +218,35 @@
 
   <div class="comparison">
 
+    <!-- BEFORE -->
     <div class="side before">
       <span class="side-label before">Before</span>
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="phone-notch"></div>
-          <div class="iframe-wrap">
-            <iframe src="https://barbcityautomotive.net" title="Before"></iframe>
+      <div class="iphone">
+        <div class="island"></div>
+        <div class="iphone-btn-left"></div>
+        <div class="iphone-btn-right"></div>
+        <div class="screen">
+          <div class="screen-placeholder">
+            <span class="ph-icon">🌐</span>
+            <span>barbcityautomotive.net</span>
           </div>
+          <!-- Swap src or replace iframe with <img> if site blocks preview -->
+          <iframe src="https://barbcityautomotive.net" title="Before"></iframe>
         </div>
       </div>
     </div>
 
     <div class="arrow">→</div>
 
+    <!-- AFTER — live HTML, no screenshot needed -->
     <div class="side after">
       <span class="side-label after">After</span>
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="phone-notch"></div>
-          <div class="iframe-wrap">
-            <iframe src="../website/index.html" title="After"></iframe>
-          </div>
+      <div class="iphone">
+        <div class="island"></div>
+        <div class="iphone-btn-left"></div>
+        <div class="iphone-btn-right"></div>
+        <div class="screen">
+          <iframe src="../website/index.html" title="After"></iframe>
         </div>
       </div>
       <span class="after-badge">Built by Garage Launch</span>
