@@ -88,7 +88,7 @@
 
     /* ── Hero ── */
     #hero { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; padding: 116px 5vw 30px; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: url('assets/building_back.jpg') center center / cover no-repeat; z-index: 0; }
+    .hero-bg { position: absolute; inset: 0; background: url('/assets/building_back.jpg') center center / cover no-repeat; z-index: 0; }
     .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.28) 100%); }
     .hero-content { position: relative; z-index: 1; max-width: 620px; }
     h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 700; line-height: 1; letter-spacing: .01em; text-transform: uppercase; margin-bottom: .75rem; }
@@ -189,18 +189,18 @@
         <span class="dd-trigger">Services <span class="dd-arrow">▾</span></span>
         <div class="nav-dd-menu">
           <div class="nav-dd-inner">
-            <a href="brakes.html">Brakes</a>
-            <a href="ac-service.html">A/C Service</a>
-            <a href="oil-changes.html">Oil Changes</a>
-            <a href="engine.html">Engine Service</a>
-            <a href="tire-service.html">Tire Service</a>
-            <a href="battery.html">Battery Service</a>
-            <a href="suspension.html">Suspension Service</a>
+            <a href="/brakes/">Brakes</a>
+            <a href="/ac-service/">A/C Service</a>
+            <a href="/oil-changes/">Oil Changes</a>
+            <a href="/engine/">Engine Service</a>
+            <a href="/tire-service/">Tire Service</a>
+            <a href="/battery/">Battery Service</a>
+            <a href="/suspension/">Suspension Service</a>
           </div>
         </div>
       </div>
       <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener">Book Online</a>
-      <a href="es/index.html" class="lang-toggle">ES</a>
+      <a href="/es/" class="lang-toggle">ES</a>
     </div>
     <div class="nav-right">
       <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
@@ -210,14 +210,14 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="services.html" onclick="closeMenu()">All Services</a>
-    <a href="brakes.html" class="mm-sub" onclick="closeMenu()">↳ Brakes</a>
-    <a href="ac-service.html" class="mm-sub" onclick="closeMenu()">↳ A/C Service</a>
-    <a href="oil-changes.html" class="mm-sub" onclick="closeMenu()">↳ Oil Changes</a>
-    <a href="engine.html" class="mm-sub" onclick="closeMenu()">↳ Engine Service</a>
-    <a href="tire-service.html" class="mm-sub" onclick="closeMenu()">↳ Tire Service</a>
-    <a href="battery.html" class="mm-sub" onclick="closeMenu()">↳ Battery Service</a>
-    <a href="suspension.html" class="mm-sub" onclick="closeMenu()">↳ Suspension Service</a>
+    <a href="/services/" onclick="closeMenu()">All Services</a>
+    <a href="/brakes/" class="mm-sub" onclick="closeMenu()">↳ Brakes</a>
+    <a href="/ac-service/" class="mm-sub" onclick="closeMenu()">↳ A/C Service</a>
+    <a href="/oil-changes/" class="mm-sub" onclick="closeMenu()">↳ Oil Changes</a>
+    <a href="/engine/" class="mm-sub" onclick="closeMenu()">↳ Engine Service</a>
+    <a href="/tire-service/" class="mm-sub" onclick="closeMenu()">↳ Tire Service</a>
+    <a href="/battery/" class="mm-sub" onclick="closeMenu()">↳ Battery Service</a>
+    <a href="/suspension/" class="mm-sub" onclick="closeMenu()">↳ Suspension Service</a>
     <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" onclick="closeMenu()">Book Online</a>
     <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
     <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()">Call Now!</a>
@@ -246,7 +246,7 @@
     <h2>WHICH SERVICE DO <span class="hl">YOU</span> NEED?</h2>
     <p class="preview-sub">From oil changes to engine repair — we handle it all under one roof.</p>
     <div class="services-thumb-grid">
-      <a href="brakes.html" class="service-thumb">
+      <a href="/brakes/" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="7"/>
           <line x1="24" y1="6" x2="24" y2="17"/><line x1="24" y1="31" x2="24" y2="42"/>
@@ -254,7 +254,7 @@
         </svg>
         <div class="thumb-name">Brakes</div>
       </a>
-      <a href="ac-service.html" class="service-thumb">
+      <a href="/ac-service/" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <line x1="24" y1="4" x2="24" y2="44"/><line x1="4" y1="24" x2="44" y2="24"/>
           <line x1="9.4" y1="9.4" x2="38.6" y2="38.6"/><line x1="38.6" y1="9.4" x2="9.4" y2="38.6"/>
@@ -262,14 +262,14 @@
         </svg>
         <div class="thumb-name">A/C Service</div>
       </a>
-      <a href="oil-changes.html" class="service-thumb">
+      <a href="/oil-changes/" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M24 6 C20 13 10 24 10 31 a14 14 0 0 0 28 0 C38 24 28 13 24 6z"/>
           <path d="M17 35 Q22 30 27 35"/>
         </svg>
         <div class="thumb-name">Oil Changes</div>
       </a>
-      <a href="engine.html" class="service-thumb">
+      <a href="/engine/" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="8"/>
           <rect x="20" y="2" width="8" height="8" rx="1"/><rect x="20" y="38" width="8" height="8" rx="1"/>
@@ -279,7 +279,7 @@
         </svg>
         <div class="thumb-name">Engine Service</div>
       </a>
-      <a href="tire-service.html" class="service-thumb">
+      <a href="/tire-service/" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="8"/>
           <line x1="24" y1="5" x2="24" y2="16"/><line x1="24" y1="32" x2="24" y2="43"/>
@@ -289,7 +289,7 @@
         </svg>
         <div class="thumb-name">Tire Service</div>
       </a>
-      <a href="battery.html" class="service-thumb">
+      <a href="/battery/" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <rect x="4" y="14" width="40" height="24" rx="2"/>
           <line x1="14" y1="10" x2="14" y2="14"/><line x1="10" y1="12" x2="18" y2="12"/>
@@ -298,7 +298,7 @@
         </svg>
         <div class="thumb-name">Battery Service</div>
       </a>
-      <a href="suspension.html" class="service-thumb">
+      <a href="/suspension/" class="service-thumb">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="24" y1="4" x2="24" y2="10"/>
           <polyline points="14,10 34,10 34,16 14,16 14,22 34,22 34,28 14,28"/>
@@ -396,7 +396,7 @@
     <div>
       <div class="footer-logo">BAEZ</div>
       <div class="footer-links">
-        <a href="services.html">Services</a>
+        <a href="/services/">Services</a>
         <a href="#contact-info">Location</a>
         <a href="#contact-info">Contact Us</a>
       </div>
