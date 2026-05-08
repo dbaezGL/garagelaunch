@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Before & After — Barb City Automotive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent:  #FFDA0F;
+      --bg:      #0a0a0a;
+      --white:   #ffffff;
+      --muted:   rgba(255,255,255,0.45);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 5vw; }
+
+    .gl-logo { font-family: 'Oswald', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; text-align: center; }
+    .headline { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 6vw, 3.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; text-align: center; line-height: 1; margin-bottom: .75rem; }
+    .headline .hl { color: var(--accent); }
+    .client-name { text-align: center; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); margin-bottom: 3.5rem; }
+
+    .comparison { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; width: 100%; max-width: 860px; }
+    .side { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; flex: 1; min-width: 240px; }
+    .side-label { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
+    .side-label.before { color: var(--muted); }
+    .side-label.after  { color: var(--accent); }
+
+    .phone-wrap { position: relative; width: 260px; flex-shrink: 0; }
+    .phone { width: 100%; aspect-ratio: 9/19; background: #1a1a1a; border-radius: 36px; border: 7px solid #2a2a2a; overflow: hidden; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.7), inset 0 0 0 1px rgba(255,255,255,0.06); }
+    .phone::before { content: ''; position: absolute; right: -10px; top: 22%; width: 4px; height: 12%; background: #2a2a2a; border-radius: 2px; z-index: 5; }
+    .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 26px; background: #1a1a1a; border-radius: 0 0 18px 18px; z-index: 10; }
+
+    .iframe-wrap { position: absolute; inset: 0; overflow: hidden; }
+    .iframe-wrap iframe { width: 390px; height: 844px; border: none; transform: scale(0.631); transform-origin: top left; pointer-events: none; display: block; }
+
+    .side.after .phone { border-color: var(--accent); box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px var(--accent), 0 0 40px rgba(255,218,15,0.15); }
+
+    .arrow { font-size: 2.5rem; color: var(--accent); flex-shrink: 0; align-self: center; margin-top: 2rem; }
+    .after-badge { background: var(--accent); color: var(--bg); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; padding: .45rem 1.2rem; border-radius: 100px; }
+    .tagline { margin-top: 3.5rem; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); text-align: center; }
+    .tagline span { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .comparison { gap: 2rem; }
+      .arrow { transform: rotate(90deg); margin: 0; }
+      .phone-wrap { width: 220px; }
+      .iframe-wrap iframe { transform: scale(0.528); }
+    }
+  </style>
+</head>
+<body>
+
+  <p class="gl-logo">Garage Launch</p>
+  <h1 class="headline">Before <span class="hl">&</span> After</h1>
+  <p class="client-name">Barb City Automotive — DeKalb, IL</p>
+
+  <div class="comparison">
+
+    <div class="side before">
+      <span class="side-label before">Before</span>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="iframe-wrap">
+            <iframe src="https://barbcityautomotive.net" title="Before"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="side after">
+      <span class="side-label after">After</span>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="iframe-wrap">
+            <iframe src="../website/index.html" title="After"></iframe>
+          </div>
+        </div>
+      </div>
+      <span class="after-badge">Built by Garage Launch</span>
+    </div>
+
+  </div>
+
+  <p class="tagline">We grow shops. <span>We run one too.</span></p>
+
+</body>
+</html>
