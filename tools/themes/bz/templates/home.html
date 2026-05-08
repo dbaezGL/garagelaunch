@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{SHOP_NAME}} — {{CITY}}, {{STATE}}</title>
+  <meta name="description" content="{{HOME_META_DESC}}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --yellow: #FFDA0F; --blue: #203351; --black: #000000; --dark: #0d0d0d; --card: #111111; --border: rgba(255,255,255,0.09); --white: #FFFFFF; --muted: rgba(255,255,255,0.62); }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .btn-yellow { display: inline-block; background: var(--yellow); color: var(--black); padding: .85rem 2rem; border-radius: 3px; font-weight: 800; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; border: none; cursor: pointer; transition: filter .2s, transform .15s; }
+    .btn-yellow:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .btn-outline { display: inline-block; background: transparent; color: var(--white); padding: .85rem 2rem; border-radius: 3px; border: 2px solid rgba(255,255,255,0.45); font-weight: 700; font-size: .95rem; text-transform: uppercase; letter-spacing: .06em; transition: border-color .2s, color .2s; }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 96px; background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border); will-change: transform; }
+    .logo { font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
+    .nav-center { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-center a { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); transition: color .2s; }
+    .nav-center a:hover { color: var(--yellow); }
+    .nav-phone { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--yellow); letter-spacing: .04em; }
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; height: 2px; background: var(--white); border-radius: 2px; transition: transform .25s, opacity .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 96px; left: 0; right: 0; background: #050505; border-bottom: 1px solid var(--border); padding: 1.5rem 5vw 2rem; z-index: 99; flex-direction: column; gap: 1.4rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
+    .mobile-menu .mm-phone { color: var(--yellow); font-size: 1rem; }
+    .mobile-menu .btn-yellow { align-self: flex-start; }
+    .nav-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+    .nav-hours { font-size: .88rem; color: var(--muted); letter-spacing: .04em; white-space: nowrap; }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .dd-trigger { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); cursor: default; display: flex; align-items: center; gap: .3rem; transition: color .2s; }
+    .nav-dropdown:hover .dd-trigger { color: var(--yellow); }
+    .dd-arrow { font-size: .55rem; opacity: .7; }
+    .nav-dd-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 18px; z-index: 200; }
+    .nav-dropdown:hover .nav-dd-menu { display: block; }
+    .nav-dd-inner { background: #080808; border: 1px solid var(--border); border-radius: 6px; padding: .5rem 0; min-width: 210px; box-shadow: 0 8px 32px rgba(0,0,0,.7); }
+    .nav-dd-inner a { display: block; padding: .65rem 1.3rem; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); transition: color .15s; white-space: nowrap; }
+    .nav-dd-inner a:hover { color: var(--yellow); }
+    .mm-sub { font-size: .78rem !important; opacity: .65; padding-left: 1.4rem; }
+
+    /* Hero */
+    .above-fold { display: flex; flex-direction: column; height: 100vh; }
+    #hero { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; padding: 116px 5vw 30px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: url('/assets/hero.jpg') center center / cover no-repeat; z-index: 0; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.28) 100%); }
+    .hero-content { position: relative; z-index: 1; max-width: 620px; }
+    h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 700; line-height: 1; letter-spacing: .01em; text-transform: uppercase; margin-bottom: .75rem; }
+    h1 .hl { color: var(--yellow); }
+    .hero-sub { font-size: .95rem; color: var(--muted); margin-bottom: .9rem; line-height: 1.7; }
+    .hero-sub strong { color: var(--white); }
+    .hero-trust { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; font-weight: 500; }
+    .hero-stars { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.4rem; }
+    .stars { color: var(--yellow); font-size: 1.1rem; letter-spacing: .04em; }
+    .review-count { font-size: .875rem; color: var(--muted); }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-trust-badges { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+    .badge { font-size: .78rem; font-weight: 700; color: var(--muted); display: flex; align-items: center; gap: .3rem; }
+    .badge::before { content: '•'; color: var(--yellow); }
+
+    /* Services preview */
+    #services-preview { background: var(--black); padding: 18px 5vw 22px; }
+    #services-preview h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: .4rem; }
+    #services-preview h2 .hl { color: var(--yellow); }
+    .preview-sub { color: var(--muted); font-size: .85rem; margin-bottom: 1.2rem; }
+    .services-thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .service-thumb { background: var(--card); padding: 1rem; border-radius: 6px; border: 1px solid var(--border); transition: background .2s, border-color .2s; display: flex; align-items: center; gap: .75rem; color: inherit; text-decoration: none; }
+    .service-thumb:hover { background: #1a1a1a; border-color: var(--yellow); }
+    .thumb-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .thumb-label { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+    .section-label { font-size: .68rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--yellow); margin-bottom: 1rem; }
+
+    /* Why */
+    #why { background: var(--dark); padding: 80px 5vw; }
+    #why h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 2.5rem; }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .why-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
+    .why-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+    .why-card h3 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .6rem; color: var(--yellow); }
+    .why-card p { font-size: .875rem; color: var(--muted); line-height: 1.7; }
+
+    /* Testimonials */
+    #testimonial { background: var(--blue); padding: 80px 5vw; }
+    #testimonial h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 2.5rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .testimonial-card { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; gap: .75rem; }
+    .tc-stars { color: var(--yellow); font-size: 1rem; letter-spacing: .06em; }
+    .tc-text { font-size: .95rem; color: rgba(255,255,255,0.85); line-height: 1.75; flex: 1; }
+    .tc-author { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
+    .tc-time { font-size: .75rem; color: rgba(255,255,255,0.4); }
+
+    /* Contact */
+    #contact-info { background: var(--black); border-top: 1px solid var(--border); padding: 80px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-block h3 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--yellow); margin-bottom: 1rem; }
+    .contact-block p { font-size: .9rem; color: var(--muted); line-height: 2; }
+    .contact-block a { color: var(--muted); transition: color .2s; }
+    .contact-block a:hover { color: var(--yellow); }
+    .location-map { width: 100%; height: 220px; border: none; border-radius: 8px; filter: grayscale(30%); }
+
+    /* Footer */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem 5vw; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; margin-bottom: .5rem; }
+    .footer-links { display: flex; flex-direction: column; gap: .5rem; }
+    .footer-links a { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--white); transition: color .2s; }
+    .footer-links a:hover { color: var(--yellow); }
+    .footer-copy { font-size: .72rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
+
+    /* Mobile */
+    @media (max-width: 1024px) { .services-thumb-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      html { scroll-behavior: auto; }
+      .nav-center, .nav-right { display: none; }
+      .hamburger { display: flex; }
+      .above-fold { height: auto; }
+      #hero { justify-content: center; margin-top: 96px; padding: 30px 5vw 40px; min-height: 60vh; }
+      .hero-bg { background-position: center 70%; }
+      .hero-bg::after { background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.9) 100%); }
+      .why-grid { grid-template-columns: 1fr; }
+      .services-thumb-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      #contact-info { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">{{SHOP_SHORT}}</a>
+    <div class="nav-center">
+      <div class="nav-dropdown">
+        <span class="dd-trigger">Services <span class="dd-arrow">▾</span></span>
+        <div class="nav-dd-menu">
+          <div class="nav-dd-inner">
+{{NAV_SERVICE_LINKS}}
+          </div>
+        </div>
+      </div>
+      <a href="{{CALENDLY_URL}}" target="_blank" rel="noopener">Book Online</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:{{PHONE_RAW}}" class="nav-phone">{{PHONE}}</a>
+      <span class="nav-hours">{{HOURS_NAV}}</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/services/" onclick="closeMenu()">All Services</a>
+{{MOBILE_SERVICE_LINKS}}
+    <a href="{{CALENDLY_URL}}" target="_blank" rel="noopener" onclick="closeMenu()">Book Online</a>
+    <a href="tel:{{PHONE_RAW}}" class="mm-phone">{{PHONE}}</a>
+    <a href="tel:{{PHONE_RAW}}" class="btn-yellow" onclick="closeMenu()">Call Now!</a>
+  </div>
+
+  <div class="above-fold">
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-trust-badges">
+          <span class="badge">{{BADGE_1}}</span>
+          <span class="badge">{{BADGE_2}}</span>
+          <span class="badge">{{BADGE_3}}</span>
+        </div>
+        <h1>{{HERO_H1_LINE1}} <span class="hl">{{HERO_H1_HIGHLIGHT}}</span><br>{{HERO_H1_LINE2}}</h1>
+        <p class="hero-sub">{{HERO_SUB}}</p>
+        <div class="hero-stars">
+          <span class="stars">★★★★★</span>
+          <span class="review-count">{{REVIEW_COUNT}} Reviews</span>
+        </div>
+        <div class="hero-btns">
+          <a href="{{CALENDLY_URL}}" target="_blank" rel="noopener" class="btn-outline">Book Online</a>
+          <a href="tel:{{PHONE_RAW}}" class="btn-yellow">Call Now!</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services-preview">
+      <p class="section-label">Services</p>
+      <h2>WHICH SERVICE DO <span class="hl">YOU</span> NEED?</h2>
+      <p class="preview-sub">{{SERVICES_PREVIEW_SUB}}</p>
+      <div class="services-thumb-grid">
+{{SERVICE_THUMBS}}
+      </div>
+    </section>
+  </div>
+
+  <section id="why">
+    <p class="section-label">Why Us</p>
+    <h2>{{WHY_HEADLINE}}</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">{{WHY_1_ICON}}</div>
+        <h3>{{WHY_1_TITLE}}</h3>
+        <p>{{WHY_1_DESC}}</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">{{WHY_2_ICON}}</div>
+        <h3>{{WHY_2_TITLE}}</h3>
+        <p>{{WHY_2_DESC}}</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">{{WHY_3_ICON}}</div>
+        <h3>{{WHY_3_TITLE}}</h3>
+        <p>{{WHY_3_DESC}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonial">
+    <p class="section-label">Google Reviews</p>
+    <h2>WHAT {{CITY_UPPER}} DRIVERS ARE SAYING</h2>
+    <div class="testimonials-grid">
+{{TESTIMONIAL_CARDS}}
+    </div>
+  </section>
+
+  <section id="contact-info">
+    <div class="contact-block">
+      <h3>Visit Us</h3>
+      <p>
+        <a href="{{MAPS_URL}}" target="_blank" rel="noopener">{{FULL_ADDRESS}}</a><br />
+        <a href="tel:{{PHONE_RAW}}">{{PHONE}}</a><br />
+        {{HOURS_WEEKDAY}}<br />
+        {{HOURS_SAT}}<br />
+        {{HOURS_SUN}}
+      </p>
+    </div>
+    <div class="contact-block">
+      <iframe class="location-map" src="{{MAPS_EMBED_URL}}" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <div class="footer-logo">{{SHOP_SHORT}}</div>
+      <div class="footer-links">
+        <a href="/services/">Services</a>
+        <a href="/#contact-info">Location</a>
+        <a href="/#contact-info">Contact Us</a>
+      </div>
+    </div>
+    <p class="footer-copy">© {{YEAR}} | All Rights Reserved | {{CITY}}, {{STATE}}</p>
+  </footer>
+  <script>
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+    function closeMenu() { btn.classList.remove('open'); menu.classList.remove('open'); }
+  </script>
+</body>
+</html>
