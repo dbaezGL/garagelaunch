@@ -15,110 +15,167 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 5vw; }
+    html, body { height: 100%; }
+    body { background: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2.5rem 5vw; gap: 0; }
 
-    .gl-logo { font-family: 'Oswald', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; text-align: center; }
-    .headline { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 6vw, 3.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; text-align: center; line-height: 1; margin-bottom: .75rem; }
+    .gl-logo { font-family: 'Oswald', sans-serif; font-size: .65rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; text-align: center; }
+    .headline { font-family: 'Oswald', sans-serif; font-size: clamp(2.2rem, 7vw, 4rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; text-align: center; line-height: 1; margin-bottom: .5rem; }
     .headline .hl { color: var(--accent); }
-    .client-name { text-align: center; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); margin-bottom: 3.5rem; }
+    .client-name { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); margin-bottom: 2.5rem; text-align: center; }
 
-    /* ── Comparison layout ── */
-    .comparison { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; width: 100%; max-width: 860px; }
-    .side { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; flex: 1; min-width: 240px; }
-    .side-label { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
+    /* ── Comparison row ── */
+    .comparison { display: flex; align-items: flex-start; justify-content: center; gap: 2.5rem; flex-wrap: wrap; width: 100%; max-width: 820px; }
+    .side { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .side-label { font-family: 'Oswald', sans-serif; font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .18em; }
     .side-label.before { color: var(--muted); }
     .side-label.after  { color: var(--accent); }
 
-    /* ── Phone mockup ── */
-    .phone-wrap { position: relative; width: 260px; flex-shrink: 0; }
-
-    .phone {
-      width: 100%;
-      aspect-ratio: 9/19;
-      background: #1a1a1a;
-      border-radius: 36px;
-      border: 7px solid #2a2a2a;
-      overflow: hidden;
+    /* ── iPhone 14 Pro Max mockup (430×932 logical px) ── */
+    .iphone {
       position: relative;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.7), inset 0 0 0 1px rgba(255,255,255,0.06);
+      width: 310px;
+      aspect-ratio: 430 / 932;
+      background: #000;
+      border-radius: 50px;
+      border: 2px solid #2e2e2e;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.07),
+        0 0 0 1px rgba(0,0,0,0.9),
+        0 36px 90px rgba(0,0,0,0.95),
+        0 8px 20px rgba(0,0,0,0.6);
+      overflow: hidden;
     }
-    .phone::before {
+
+    /* Metallic sheen */
+    .iphone::after {
       content: '';
       position: absolute;
-      right: -10px;
-      top: 22%;
-      width: 4px;
-      height: 12%;
-      background: #2a2a2a;
-      border-radius: 2px;
-      z-index: 5;
-    }
-    .phone-notch {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90px;
-      height: 26px;
-      background: #1a1a1a;
-      border-radius: 0 0 18px 18px;
-      z-index: 10;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(150deg, rgba(255,255,255,0.07) 0%, transparent 35%);
+      pointer-events: none;
+      z-index: 40;
     }
 
-    /* ── Iframe scaling ── */
-    /* Phone inner width: 260 - 7*2 = 246px. Target mobile viewport: 390px. Scale = 246/390 = 0.631 */
-    .iframe-wrap {
+    /* Side buttons */
+    .btn-left {
       position: absolute;
-      inset: 0;
-      overflow: hidden;
+      left: -3px; top: 18%;
+      width: 3px; height: 7%;
+      background: #2e2e2e;
+      border-radius: 2px 0 0 2px;
+      z-index: 5;
     }
-    .iframe-wrap iframe {
-      width: 390px;
-      height: 844px;
+    .btn-left::before {
+      content: '';
+      position: absolute;
+      top: -190%; left: 0;
+      width: 100%; height: 160%;
+      background: #2e2e2e;
+      border-radius: 2px 0 0 2px;
+    }
+    .btn-right {
+      position: absolute;
+      right: -3px; top: 24%;
+      width: 3px; height: 14%;
+      background: #2e2e2e;
+      border-radius: 0 2px 2px 0;
+      z-index: 5;
+    }
+
+    /* ── Status bar ── */
+    /* RULE: status bar bg must match the site's nav/header color.
+       Light header → white bg + black icons.
+       Dark header  → transparent bg + white icons.
+       Set .side.before / .side.after overrides per client below. */
+    .phone-status {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 52px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 22px 0;
+      pointer-events: none;
+    }
+    .status-time { font-size: 13px; font-weight: 700; letter-spacing: -.3px; font-family: 'Inter', sans-serif; }
+    .status-icons { display: flex; align-items: center; gap: 5px; }
+
+    /* ── SWAP THESE PER CLIENT ── */
+    /* Before phone: match their old site's nav background + icon color */
+    .side.before .phone-status { background: transparent; }   /* dark nav example */
+    .side.before .status-time  { color: #fff; }
+    .side.before .phone-status svg { fill: #fff; }
+    .side.before .phone-status svg path { stroke: #fff; }
+
+    /* After phone: match the new site's nav background + icon color */
+    .side.after .phone-status { background: #ffffff; }        /* white nav example */
+    .side.after .status-time  { color: #000; }
+    .side.after .phone-status svg { fill: #000; }
+    .side.after .phone-status svg path { stroke: #000; }
+    /* ── END CLIENT SWAP ── */
+
+    /* ── Dynamic Island ── */
+    .island {
+      position: absolute;
+      top: 11px; left: 50%;
+      transform: translateX(-50%);
+      width: 104px; height: 30px;
+      background: #000;
+      border-radius: 18px;
+      z-index: 31;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
+    }
+
+    /* ── Screen / iframe ── */
+    /* Inner width: 310 - 2*2 = 306px. Viewport: 430px. Scale = 306/430 = 0.712 */
+    .screen {
+      position: absolute;
+      top: 52px; /* clears status bar overlay */
+      left: 0; right: 0; bottom: 0;
+      overflow: hidden;
+      border-radius: 0 0 46px 46px;
+    }
+    .screen iframe {
+      position: absolute;
+      top: 0; left: 0;
+      z-index: 1;
+      width: 430px;
+      height: 932px;
       border: none;
-      transform: scale(0.631);
+      transform: scale(0.712);
       transform-origin: top left;
       pointer-events: none;
       display: block;
     }
 
-    /* ── "After" phone glow ── */
-    .side.after .phone {
+    /* ── "After" phone glow — swap color per client ── */
+    .side.after .iphone {
       border-color: var(--accent);
-      box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px var(--accent), 0 0 40px rgba(255,218,15,0.15);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,218,15,0.1),
+        0 0 0 1px rgba(255,218,15,0.4),
+        0 0 55px rgba(255,218,15,0.18),
+        0 36px 90px rgba(0,0,0,0.95);
     }
 
     /* ── Arrow ── */
-    .arrow { font-size: 2.5rem; color: var(--accent); flex-shrink: 0; align-self: center; margin-top: 2rem; }
+    .arrow { font-size: 1.8rem; color: var(--accent); flex-shrink: 0; align-self: center; opacity: .9; margin-top: 2rem; }
 
-    /* ── Badge ── */
-    .after-badge { background: var(--accent); color: var(--bg); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; padding: .45rem 1.2rem; border-radius: 100px; }
+    /* ── Badge — always GL yellow, never client color ── */
+    .after-badge { background: #FFDA0F; color: #0a0a0a; font-size: .63rem; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; padding: .38rem 1rem; border-radius: 100px; }
 
     /* ── Footer ── */
-    .tagline { margin-top: 3.5rem; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); text-align: center; }
-    .tagline span { color: var(--accent); }
+    .tagline { margin-top: 2.5rem; font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); text-align: center; }
+    .tagline span { color: #FFDA0F; }
 
-    /* ── Fallback message if iframe blocked ── */
-    .iframe-blocked {
-      display: none;
-      position: absolute;
-      inset: 0;
-      background: #1a1a1a;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: .7rem;
-      color: var(--muted);
-      padding: 1rem;
-      z-index: 20;
-    }
-
-    @media (max-width: 640px) {
-      .comparison { gap: 2rem; }
+    @media (max-width: 720px) {
+      .comparison { flex-direction: column; align-items: center; gap: 1.5rem; }
       .arrow { transform: rotate(90deg); margin: 0; }
-      .phone-wrap { width: 220px; }
-      /* Recalculate scale for 220px phone: inner = 206px. Scale = 206/390 = 0.528 */
-      .iframe-wrap iframe { transform: scale(0.528); }
+      .iphone { width: 260px; }
+      /* 260 - 4 = 256px inner. Scale = 256/430 = 0.595 */
+      .screen iframe { transform: scale(0.595); }
     }
   </style>
 </head>
@@ -133,16 +190,39 @@
   <div class="comparison">
 
     <!-- BEFORE -->
+    <!-- If the live site blocks iframes, build a before-mobile.html locally.
+         Download their logo + hero image to comparison/assets/ with curl -L.
+         Point iframe src to "before-mobile.html" instead of the live URL. -->
     <div class="side before">
       <span class="side-label before">Before</span>
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="phone-notch"></div>
-          <div class="iframe-wrap">
-            <!-- Swap with their current website URL -->
-            <!-- If it shows blank, their site blocks iframes — use a screenshot instead -->
-            <iframe src="https://their-current-site.com" title="Before"></iframe>
+      <div class="iphone">
+        <div class="phone-status">
+          <span class="status-time">9:41</span>
+          <div class="status-icons">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="black" opacity=".8">
+              <rect x="0" y="7" width="3" height="5" rx="0.8"/>
+              <rect x="4.5" y="5" width="3" height="7" rx="0.8"/>
+              <rect x="9" y="2.5" width="3" height="9.5" rx="0.8"/>
+              <rect x="13.5" y="0" width="3" height="12" rx="0.8"/>
+            </svg>
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" opacity=".8">
+              <circle cx="8" cy="11" r="1.5" fill="black"/>
+              <path d="M4.8 8C5.9 6.9 6.9 6.3 8 6.3s2.1.6 3.2 1.7" stroke="black" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+              <path d="M2 5C4 3 5.9 2 8 2s4 1 6 3" stroke="black" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            </svg>
+            <svg width="26" height="13" viewBox="0 0 26 13" fill="none" opacity=".8">
+              <rect x="0.5" y="0.5" width="21" height="12" rx="3.5" stroke="black" stroke-opacity="0.45"/>
+              <rect x="2" y="2" width="10" height="9" rx="2" fill="black"/>
+              <path d="M23 4.5v4a2.5 2.5 0 000-4z" fill="black" fill-opacity="0.45"/>
+            </svg>
           </div>
+        </div>
+        <div class="island"></div>
+        <div class="btn-left"></div>
+        <div class="btn-right"></div>
+        <div class="screen">
+          <!-- Use live URL or local before-mobile.html -->
+          <iframe src="https://their-current-site.com" title="Before" scrolling="no"></iframe>
         </div>
       </div>
     </div>
@@ -152,14 +232,35 @@
     <!-- AFTER -->
     <div class="side after">
       <span class="side-label after">After</span>
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="phone-notch"></div>
-          <div class="iframe-wrap">
-            <!-- Swap with relative path to the built hero page -->
-            <!-- e.g. ../../clients/barb-city-automotive/website/index.html -->
-            <iframe src="../../clients/CLIENT-SLUG/website/index.html" title="After"></iframe>
+      <div class="iphone">
+        <div class="phone-status">
+          <span class="status-time">9:41</span>
+          <div class="status-icons">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="black" opacity=".8">
+              <rect x="0" y="7" width="3" height="5" rx="0.8"/>
+              <rect x="4.5" y="5" width="3" height="7" rx="0.8"/>
+              <rect x="9" y="2.5" width="3" height="9.5" rx="0.8"/>
+              <rect x="13.5" y="0" width="3" height="12" rx="0.8"/>
+            </svg>
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" opacity=".8">
+              <circle cx="8" cy="11" r="1.5" fill="black"/>
+              <path d="M4.8 8C5.9 6.9 6.9 6.3 8 6.3s2.1.6 3.2 1.7" stroke="black" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+              <path d="M2 5C4 3 5.9 2 8 2s4 1 6 3" stroke="black" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            </svg>
+            <svg width="26" height="13" viewBox="0 0 26 13" fill="none" opacity=".8">
+              <rect x="0.5" y="0.5" width="21" height="12" rx="3.5" stroke="black" stroke-opacity="0.45"/>
+              <rect x="2" y="2" width="16" height="9" rx="2" fill="black"/>
+              <path d="M23 4.5v4a2.5 2.5 0 000-4z" fill="black" fill-opacity="0.45"/>
+            </svg>
           </div>
+        </div>
+        <div class="island"></div>
+        <div class="btn-left"></div>
+        <div class="btn-right"></div>
+        <div class="screen">
+          <!-- Swap with relative path to the built hero page -->
+          <!-- e.g. ../../clients/barb-city-automotive/website/index.html -->
+          <iframe src="../../clients/CLIENT-SLUG/website/index.html" title="After" scrolling="no"></iframe>
         </div>
       </div>
       <span class="after-badge">Built by Garage Launch</span>

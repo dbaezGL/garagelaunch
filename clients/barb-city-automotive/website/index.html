@@ -72,8 +72,8 @@
 
     /* ── Hero ── */
     #hero { position: relative; min-height: 82vh; display: flex; align-items: center; padding: 80px 5vw; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: url('/assets/hero.jpg') center center / cover no-repeat; z-index: 0; }
-    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(1,33,108,0.92) 0%, rgba(1,33,108,0.7) 45%, rgba(0,0,0,0.3) 100%); }
+    .hero-bg { position: absolute; inset: 0; background: url('assets/barb-team.webp') center center / cover no-repeat; z-index: 0; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.72); }
     .hero-content { position: relative; z-index: 1; max-width: 620px; }
     .hero-eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--white); opacity: .7; margin-bottom: .75rem; }
     h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.6rem, 6vw, 4.8rem); font-weight: 700; line-height: 1; letter-spacing: .01em; text-transform: uppercase; margin-bottom: 1rem; }
@@ -178,7 +178,7 @@
       .mobile-menu { top: 60px; bottom: auto; padding: 1.5rem 5vw 2rem; }
 
       /* Hero fills viewport below nav */
-      #hero { padding: 100px 5vw 40px; min-height: 85svh; align-items: flex-start; }
+      #hero { padding: 100px 5vw 40px; min-height: 84svh; align-items: center; }
       .hero-bg { background-position: center center; }
       h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
       .hero-sub { font-size: .9rem; margin-bottom: 1.4rem; }
