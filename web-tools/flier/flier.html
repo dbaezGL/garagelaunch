@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Garage Launch — Shop Flier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a0a0a;
+      width: 8.5in;
+      height: 11in;
+      padding: .42in .55in;
+      display: flex;
+      flex-direction: column;
+      gap: .18in;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid #0a0a0a;
+      padding-bottom: .14in;
+      flex-shrink: 0;
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .logo span { color: #f5c400; }
+    .header-tag {
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: #0a0a0a;
+    }
+
+    /* ── Hero block ── */
+    .hero {
+      background: #0a0a0a;
+      color: #fff;
+      padding: .2in .38in;
+      flex-shrink: 0;
+    }
+    .hero-eyebrow {
+      font-size: .56rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      color: #f5c400;
+      margin-bottom: .06in;
+    }
+    .hero-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: .08in;
+    }
+    .hero-headline .hl { color: #f5c400; }
+    .hero-sub {
+      font-size: .7rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.45;
+    }
+
+    /* ── Before / After ── */
+    .comparison {
+      display: flex;
+      align-items: flex-start;
+      gap: .18in;
+      flex: 1;
+      min-height: 0;
+    }
+    .img-side {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .12in;
+      min-height: 0;
+    }
+    .img-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: #0a0a0a;
+      flex-shrink: 0;
+    }
+    .img-side img {
+      max-height: 5in;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      border: 2px solid #0a0a0a;
+    }
+    .after-side img { border: 3px solid #f5c400; }
+    .after-badge {
+      background: #f5c400;
+      color: #0a0a0a;
+      font-size: .5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      padding: .22rem .9rem;
+      border-radius: 100px;
+      flex-shrink: 0;
+      
+    }
+    .comparison-arrow {
+      font-size: 1.4rem;
+      color: #f5c400;
+      align-self: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Proof + Guarantee row ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .14in;
+      flex-shrink: 0;
+    }
+    .proof-block {
+      background: #f7f7f7;
+      padding: .14in .18in;
+      border-left: 4px solid #0a0a0a;
+    }
+    .proof-label {
+      font-size: .55rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: #0a0a0a;
+      margin-bottom: .07in;
+    }
+    .proof-text {
+      font-size: .65rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: #0a0a0a;
+    }
+    .proof-name {
+      font-size: .56rem;
+      color: #0a0a0a;
+      margin-top: .06in;
+    }
+    .guarantee-block {
+      background: #f5c400;
+      padding: .14in .18in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .guarantee-label {
+      font-size: .55rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: #0a0a0a;
+      margin-bottom: .07in;
+    }
+    .guarantee-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: #0a0a0a;
+    }
+    .guarantee-sub {
+      font-size: .58rem;
+      color: #0a0a0a;
+      margin-top: .06in;
+      line-height: 1.4;
+    }
+
+    /* ── Guarantee strip ── */
+    .guarantee {
+      background: #f5c400;
+      padding: .13in .3in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .guarantee p {
+      font-family: 'Oswald', sans-serif;
+      font-size: .88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #0a0a0a;
+      text-align: center;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0a0a0a;
+      color: #fff;
+      padding: .16in .3in;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .footer-cta {
+      font-family: 'Oswald', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .footer-cta span { color: #f5c400; }
+    .footer-contact { text-align: right; }
+    .footer-contact p {
+      display: block;
+      font-size: .68rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .04em;
+    }
+    .footer-contact .phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: .95rem;
+      color: #f5c400;
+    }
+
+    @media print {
+      body { padding: .38in .5in; }
+      @page { size: letter; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">Garage<span> Launch</span></div>
+    <div class="header-tag">Solutions for your auto business</div>
+  </div>
+
+  <div class="hero">
+    <p class="hero-eyebrow">Attention: Auto Business Owners</p>
+    <h1 class="hero-headline">Your online presence is<br><span class="hl">costing you customers.</span></h1>
+    <p class="hero-sub">When someone's car breaks down, they search their phone first. If your site is outdated (or missing) that call goes to a competitor. We can fix that.</p>
+  </div>
+
+  <div class="comparison">
+    <div class="img-side">
+      <span class="img-label">Before</span>
+      <img src="../../clients/baez-auto/comparison/Screenshot 2026-05-08 183552.png" alt="Before" />
+    </div>
+    <div class="comparison-arrow">→</div>
+    <div class="img-side after-side">
+      <span class="img-label">After</span>
+      <img src="../../clients/baez-auto/comparison/Screenshot 2026-05-08 184134.png" alt="After" />
+      <span class="after-badge">Built by Garage Launch</span>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="proof-block">
+      <div class="proof-label">Why?</div>
+      <div class="proof-text">"Growing up in an auto repair family, I saw how impactful it was to build a strong online presence for a small shop -  especially when the slow weeks turned into consistent calls every day. Word of mouth is still powerful, but today's world requires a strong digital presence to stay competitive in the industries we love and continue putting food on the table."</div>
+      <div class="proof-name">— Danny Baez, Marketing & Operations, Baez Auto · Elgin, IL</div>
+    </div>
+    <div class="guarantee-block">
+      <div class="guarantee-label">Our Guarantee</div>
+      <div class="guarantee-text">More calls in 60 days or your money back.</div>
+      <div class="guarantee-sub">No contracts. No agency fees. If it doesn't work, you don't pay.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-cta">Ready to get more calls? <span>Let's talk.</span></div>
+    <div class="footer-contact">
+      <p class="phone">(630) 888-4477</p>
+      <p>danny@garagelaunch.co</p>
+      <p>garagelaunch.co</p>
+    </div>
+  </div>
+
+</body>
+</html>
