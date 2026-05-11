@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <!-- white background for standalone use -->
+  <rect width="40" height="40" fill="#ffffff"/>
+
+  <!-- Jaw — mid arm pointing inward from right (black) -->
+  <rect x="20" y="18" width="20" height="8" fill="#000000"/>
+  <!-- Left bar — L vertical (yellow) -->
+  <rect x="0" y="0" width="8" height="40" fill="#f5c400"/>
+    <!-- Top bar (black) -->
+  <rect x="0" y="0" width="40" height="8" fill="#000000"/>
+  <!-- Bottom bar — L horizontal (yellow) -->
+  <rect x="8" y="32" width="32" height="8" fill="#f5c400"/>
+    <!-- Right bar — lower half only (black) -->
+  <rect x="32" y="18" width="8" height="22" fill="#000000"/>
+</svg>

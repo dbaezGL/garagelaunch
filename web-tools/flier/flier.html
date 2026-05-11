@@ -30,12 +30,16 @@
       flex-shrink: 0;
     }
     .logo {
+      display: flex;
+      align-items: center;
+      gap: .35em;
       font-family: 'Oswald', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: .22em;
       text-transform: uppercase;
     }
+    .logo img { width: 28px; height: 28px; display: block; }
     .logo span { color: #f5c400; }
     .header-tag {
       font-size: .65rem;
@@ -49,7 +53,7 @@
     .hero {
       background: #0a0a0a;
       color: #fff;
-      padding: .2in .38in;
+      padding: .3in .38in;
       flex-shrink: 0;
     }
     .hero-eyebrow {
@@ -78,7 +82,7 @@
     /* ── Before / After ── */
     .comparison {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: .18in;
       flex: 1;
       min-height: 0;
@@ -102,9 +106,10 @@
       flex-shrink: 0;
     }
     .img-side img {
-      max-height: 5in;
-      width: auto;
-      max-width: 100%;
+      width: 3in;
+      height: 4.8in;
+      object-fit: cover;
+      object-position: top;
       display: block;
       border: 2px solid #0a0a0a;
     }
@@ -129,12 +134,7 @@
     }
 
     /* ── Proof + Guarantee row ── */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: .14in;
-      flex-shrink: 0;
-    }
+
     .proof-block {
       background: #f7f7f7;
       padding: .14in .18in;
@@ -152,6 +152,7 @@
       font-size: .65rem;
       font-weight: 600;
       line-height: 1.45;
+      max-width: 90%;
       color: #0a0a0a;
     }
     .proof-name {
@@ -187,25 +188,6 @@
       color: #0a0a0a;
       margin-top: .06in;
       line-height: 1.4;
-    }
-
-    /* ── Guarantee strip ── */
-    .guarantee {
-      background: #f5c400;
-      padding: .13in .3in;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .guarantee p {
-      font-family: 'Oswald', sans-serif;
-      font-size: .88rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      color: #0a0a0a;
-      text-align: center;
     }
 
     /* ── Footer ── */
@@ -249,14 +231,13 @@
 <body>
 
   <div class="header">
-    <div class="logo">Garage<span> Launch</span></div>
+    <div class="logo"><img src="../../GARAGE Site/logo-light.svg" alt="">Garage<span> Launch</span></div>
     <div class="header-tag">Solutions for your auto business</div>
   </div>
 
   <div class="hero">
     <p class="hero-eyebrow">Attention: Auto Business Owners</p>
     <h1 class="hero-headline">Your online presence is<br><span class="hl">costing you customers.</span></h1>
-    <p class="hero-sub">When someone's car breaks down, they search their phone first. If your site is outdated (or missing) that call goes to a competitor. We can fix that.</p>
   </div>
 
   <div class="comparison">
@@ -268,25 +249,19 @@
     <div class="img-side after-side">
       <span class="img-label">After</span>
       <img src="../../clients/baez-auto/comparison/Screenshot 2026-05-08 184134.png" alt="After" />
-      <span class="after-badge">Built by Garage Launch</span>
     </div>
   </div>
 
-  <div class="two-col">
-    <div class="proof-block">
-      <div class="proof-label">Why?</div>
-      <div class="proof-text">"Growing up in an auto repair family, I saw how impactful it was to build a strong online presence for a small shop -  especially when the slow weeks turned into consistent calls every day. Word of mouth is still powerful, but today's world requires a strong digital presence to stay competitive in the industries we love and continue putting food on the table."</div>
-      <div class="proof-name">— Danny Baez, Marketing & Operations, Baez Auto · Elgin, IL</div>
-    </div>
-    <div class="guarantee-block">
-      <div class="guarantee-label">Our Guarantee</div>
-      <div class="guarantee-text">More calls in 60 days or your money back.</div>
-      <div class="guarantee-sub">No contracts. No agency fees. If it doesn't work, you don't pay.</div>
-    </div>
+  <div class="proof-block">
+    <div class="proof-label">Why?</div>
+    <div class="proof-text">"Growing up in an auto repair family, I saw how impactful it was to build a strong online presence for a small shop -  especially when the slow weeks turned into consistent calls every day. Word of mouth is still powerful, but today's world requires a strong digital presence to stay competitive in the industries we love and continue putting food on the table."</div>
+    <div class="proof-name">— Danny Baez, Marketing & Operations, Baez Auto · Elgin, IL</div>
   </div>
-
   <div class="footer">
-    <div class="footer-cta">Ready to get more calls? <span>Let's talk.</span></div>
+    <div style="display:flex;align-items:center;gap:.5em;">
+      <img src="../../GARAGE Site/logo-dark.svg" alt="" style="width:32px;height:32px;">
+      <div class="footer-cta">Ready to get more calls? <span>Let's talk.</span></div>
+    </div>
     <div class="footer-contact">
       <p class="phone">(630) 888-4477</p>
       <p>danny@garagelaunch.co</p>
