@@ -161,9 +161,11 @@
     @media (max-width: 1024px) {
       .services-thumb-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    .lang-toggle-mobile { display: none; }
     @media (max-width: 768px) {
       .nav-center, .nav-right { display: none; }
       .hamburger { display: flex; }
+      .lang-toggle-mobile { display: inline-block; }
       .above-fold { height: auto; }
       html { scroll-behavior: auto; }
       #hero { justify-content: center; margin-top: 96px; padding: 30px 5vw 40px; min-height: 60vh; }
@@ -204,6 +206,7 @@
       <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
       <span class="nav-hours">Mon–Fri 9–7pm &nbsp;·&nbsp; Sat 9–4pm &nbsp;·&nbsp; Sun Closed</span>
     </div>
+    <a href="/es/" class="lang-toggle lang-toggle-mobile">ES</a>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
@@ -218,7 +221,6 @@
     <a href="/suspension-service/" class="mm-sub" onclick="closeMenu()">↳ Suspension Service</a>
     <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" onclick="closeMenu()">Book Online</a>
     <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
-    <a href="/es/" class="lang-toggle" onclick="closeMenu()">ES</a>
     <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()">Call Now!</a>
   </div>
 
