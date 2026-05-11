@@ -29,7 +29,7 @@
     .btn-yellow:hover { filter: brightness(1.1); transform: translateY(-1px); }
 
     /* ── Nav ── */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 96px; background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 max(5vw, calc((100% - 1200px) / 2)); height: 96px; background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border); }
     .logo { font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
     .nav-center { display: flex; align-items: center; gap: 2.5rem; }
     .nav-center a { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); transition: color .2s; }
@@ -40,7 +40,7 @@
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display: none; position: fixed; top: 96px; left: 0; right: 0; background: #050505; border-bottom: 1px solid var(--border); padding: 1.5rem 5vw 2rem; z-index: 99; flex-direction: column; gap: 1.4rem; }
+    .mobile-menu { display: none; position: fixed; top: 96px; left: 0; right: 0; background: #050505; border-bottom: 1px solid var(--border); padding: 1.5rem max(5vw, calc((100% - 1200px) / 2)) 2rem; z-index: 99; flex-direction: column; gap: 1.4rem; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: .875rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
     .mobile-menu .mm-phone { color: var(--yellow); font-size: 1rem; }
@@ -61,7 +61,7 @@
     .mm-sub { font-size: .78rem !important; opacity: .65; padding-left: 1.4rem; }
 
     /* ── Page hero ── */
-    #page-hero { position: relative; min-height: 52vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 120px 5vw 60px; overflow: hidden; }
+    #page-hero { position: relative; min-height: 52vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 120px max(5vw, calc((100% - 1200px) / 2)) 60px; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: url('/assets/building_back.jpg') center 40% / cover no-repeat; z-index: 0; }
     .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.78); }
     .hero-content { position: relative; z-index: 1; }
@@ -70,7 +70,7 @@
     .hero-sub-text { font-size: 1rem; color: var(--muted); margin-top: .75rem; }
 
     /* ── Services grid ── */
-    #services { padding: 80px 5vw; background: var(--dark); }
+    #services { padding: 80px max(5vw, calc((100% - 1200px) / 2)); background: var(--dark); }
     .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .service-card { background: var(--card); padding: 2.2rem 1.8rem; border-radius: 6px; border: 1px solid var(--border); transition: background .2s, border-color .2s; display: flex; flex-direction: column; gap: 1rem; text-decoration: none; color: inherit; }
     .service-card:hover { background: #181818; border-color: rgba(255,218,15,0.3); }
@@ -80,20 +80,20 @@
     .service-desc { font-size: .875rem; color: var(--muted); line-height: 1.75; flex: 1; }
 
     /* ── CTA ── */
-    #cta { background: var(--blue); padding: 70px 5vw; text-align: center; }
+    #cta { background: var(--blue); padding: 70px max(5vw, calc((100% - 1200px) / 2)); text-align: center; }
     #cta h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: 1.5rem; }
     .btn-yellow-lg { display: inline-block; background: var(--yellow); color: var(--black); padding: 1.1rem 3rem; border-radius: 3px; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: .08em; transition: filter .2s, transform .15s; }
     .btn-yellow-lg:hover { filter: brightness(1.1); transform: translateY(-1px); }
 
     /* ── Visit Us strip ── */
-    #visit { background: var(--dark); border-top: 1px solid var(--border); padding: 50px 5vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    #visit { background: var(--dark); border-top: 1px solid var(--border); padding: 50px max(5vw, calc((100% - 1200px) / 2)); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
     .visit-left h3 { font-family: 'Oswald', sans-serif; font-size: 1.3rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--yellow); margin-bottom: .6rem; }
     .visit-left p { font-size: .9rem; color: var(--muted); line-height: 1.8; }
     .visit-left a { color: var(--muted); transition: color .2s; }
     .visit-left a:hover { color: var(--yellow); }
 
     /* ── Footer ── */
-    footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem 5vw; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem max(5vw, calc((100% - 1200px) / 2)); display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
     .footer-logo { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; margin-bottom: .5rem; }
     .footer-links { display: flex; flex-direction: column; gap: .5rem; }
     .footer-links a { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--white); transition: color .2s; }
