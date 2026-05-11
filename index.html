@@ -161,6 +161,7 @@
     @media (max-width: 1024px) {
       .services-thumb-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    .nav-logo-group { display: flex; align-items: center; gap: 1rem; }
     .lang-toggle-mobile { display: none; }
     @media (max-width: 768px) {
       .nav-center, .nav-right { display: none; }
@@ -183,7 +184,10 @@
 <body>
 
   <nav>
-    <div class="logo">BAEZ</div>
+    <div class="nav-logo-group">
+      <div class="logo">BAEZ</div>
+      <a href="/es/" class="lang-toggle lang-toggle-mobile">ES</a>
+    </div>
     <div class="nav-center">
       <div class="nav-dropdown">
         <span class="dd-trigger">Services <span class="dd-arrow">▾</span></span>
@@ -206,7 +210,6 @@
       <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
       <span class="nav-hours">Mon–Fri 9–7pm &nbsp;·&nbsp; Sat 9–4pm &nbsp;·&nbsp; Sun Closed</span>
     </div>
-    <a href="/es/" class="lang-toggle lang-toggle-mobile">ES</a>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
