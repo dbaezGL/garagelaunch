@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baez Auto Repair — Elgin, IL</title>
   <meta name="description" content="Taller mecánico familiar en Elgin, IL. Precios transparentes, servicio el mismo día, sin cargos ocultos. Frenos, Motor, A/C, Cambios de Aceite y más. Llame al (630) 276-8596." />
+  <!-- Google tag (gtag.js) — GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVLNQ0MF32"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PVLNQ0MF32');
+  </script>
+  <script src="/tracking.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -173,28 +182,61 @@
   <nav>
     <div class="nav-logo-group">
       <div class="logo">BAEZ</div>
-      <a href="/" class="lang-toggle lang-toggle-mobile">EN</a>
+      <a href="/" class="lang-toggle lang-toggle-mobile"
+         data-track="nav_click" data-category="navigation"
+         data-label="language_toggle_en" data-click-location="nav"
+         data-destination-url="/">EN</a>
     </div>
     <div class="nav-center">
       <div class="nav-dropdown">
         <span class="dd-trigger">Servicios <span class="dd-arrow">▾</span></span>
         <div class="nav-dd-menu">
           <div class="nav-dd-inner">
-            <a href="/es/brakes/">Frenos</a>
-            <a href="/es/ac-service/">Servicio de A/C</a>
-            <a href="/es/oil-changes/">Cambios de Aceite</a>
-            <a href="/es/engine/">Servicio de Motor</a>
-            <a href="/es/tire-service/">Servicio de Llantas</a>
-            <a href="/es/battery/">Servicio de Batería</a>
-            <a href="/es/suspension/">Servicio de Suspensión</a>
+            <a href="/es/brakes/"
+               data-track="service_click" data-category="service"
+               data-label="Frenos" data-service-type="brakes"
+               data-click-location="nav_dropdown" data-destination-url="/es/brakes/">Frenos</a>
+            <a href="/es/ac-service/"
+               data-track="service_click" data-category="service"
+               data-label="Servicio de A/C" data-service-type="ac"
+               data-click-location="nav_dropdown" data-destination-url="/es/ac-service/">Servicio de A/C</a>
+            <a href="/es/oil-changes/"
+               data-track="service_click" data-category="service"
+               data-label="Cambios de Aceite" data-service-type="oil_change"
+               data-click-location="nav_dropdown" data-destination-url="/es/oil-changes/">Cambios de Aceite</a>
+            <a href="/es/engine/"
+               data-track="service_click" data-category="service"
+               data-label="Servicio de Motor" data-service-type="engine"
+               data-click-location="nav_dropdown" data-destination-url="/es/engine/">Servicio de Motor</a>
+            <a href="/es/tire-service/"
+               data-track="service_click" data-category="service"
+               data-label="Servicio de Llantas" data-service-type="tires"
+               data-click-location="nav_dropdown" data-destination-url="/es/tire-service/">Servicio de Llantas</a>
+            <a href="/es/battery/"
+               data-track="service_click" data-category="service"
+               data-label="Servicio de Batería" data-service-type="battery"
+               data-click-location="nav_dropdown" data-destination-url="/es/battery/">Servicio de Batería</a>
+            <a href="/es/suspension/"
+               data-track="service_click" data-category="service"
+               data-label="Servicio de Suspensión" data-service-type="suspension"
+               data-click-location="nav_dropdown" data-destination-url="/es/suspension/">Servicio de Suspensión</a>
           </div>
         </div>
       </div>
-      <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener">Reservar</a>
-      <a href="/" class="lang-toggle">EN</a>
+      <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener"
+         data-track="booking_click" data-category="booking"
+         data-label="Reservar" data-click-location="nav"
+         data-destination-url="https://calendly.com/baezauto1/30min">Reservar</a>
+      <a href="/" class="lang-toggle"
+         data-track="nav_click" data-category="navigation"
+         data-label="language_toggle_en" data-click-location="nav"
+         data-destination-url="/">EN</a>
     </div>
     <div class="nav-right">
-      <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
+      <a href="tel:6302768596" class="nav-phone"
+         data-track="phone_click" data-category="phone"
+         data-label="(630) 276-8596" data-click-location="nav"
+         data-destination-url="tel:6302768596">(630) 276-8596</a>
       <span class="nav-hours">Lun–Vie 9–7pm &nbsp;·&nbsp; Sáb 9–4pm &nbsp;·&nbsp; Dom Cerrado</span>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -202,17 +244,50 @@
 
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="/es/" onclick="closeMenu()">Todos los Servicios</a>
-    <a href="/es/brakes/" class="mm-sub" onclick="closeMenu()">↳ Frenos</a>
-    <a href="/es/ac-service/" class="mm-sub" onclick="closeMenu()">↳ Servicio de A/C</a>
-    <a href="/es/oil-changes/" class="mm-sub" onclick="closeMenu()">↳ Cambios de Aceite</a>
-    <a href="/es/engine/" class="mm-sub" onclick="closeMenu()">↳ Servicio de Motor</a>
-    <a href="/es/tire-service/" class="mm-sub" onclick="closeMenu()">↳ Servicio de Llantas</a>
-    <a href="/es/battery/" class="mm-sub" onclick="closeMenu()">↳ Servicio de Batería</a>
-    <a href="/es/suspension/" class="mm-sub" onclick="closeMenu()">↳ Servicio de Suspensión</a>
-    <a href="#contact-info" onclick="closeMenu()">Reservar en Línea</a>
-    <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
-    <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()">¡Llame Ahora!</a>
+    <a href="/es/" onclick="closeMenu()"
+       data-track="service_click" data-category="service"
+       data-label="Todos los Servicios" data-service-type="all_services"
+       data-click-location="mobile_menu" data-destination-url="/es/">Todos los Servicios</a>
+    <a href="/es/brakes/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service"
+       data-label="Frenos" data-service-type="brakes"
+       data-click-location="mobile_menu" data-destination-url="/es/brakes/">↳ Frenos</a>
+    <a href="/es/ac-service/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service"
+       data-label="Servicio de A/C" data-service-type="ac"
+       data-click-location="mobile_menu" data-destination-url="/es/ac-service/">↳ Servicio de A/C</a>
+    <a href="/es/oil-changes/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service"
+       data-label="Cambios de Aceite" data-service-type="oil_change"
+       data-click-location="mobile_menu" data-destination-url="/es/oil-changes/">↳ Cambios de Aceite</a>
+    <a href="/es/engine/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service"
+       data-label="Servicio de Motor" data-service-type="engine"
+       data-click-location="mobile_menu" data-destination-url="/es/engine/">↳ Servicio de Motor</a>
+    <a href="/es/tire-service/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service"
+       data-label="Servicio de Llantas" data-service-type="tires"
+       data-click-location="mobile_menu" data-destination-url="/es/tire-service/">↳ Servicio de Llantas</a>
+    <a href="/es/battery/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service"
+       data-label="Servicio de Batería" data-service-type="battery"
+       data-click-location="mobile_menu" data-destination-url="/es/battery/">↳ Servicio de Batería</a>
+    <a href="/es/suspension/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service"
+       data-label="Servicio de Suspensión" data-service-type="suspension"
+       data-click-location="mobile_menu" data-destination-url="/es/suspension/">↳ Servicio de Suspensión</a>
+    <a href="#contact-info" onclick="closeMenu()"
+       data-track="nav_click" data-category="navigation"
+       data-label="Reservar en Línea" data-click-location="mobile_menu"
+       data-destination-url="#contact-info">Reservar en Línea</a>
+    <a href="tel:6302768596" class="mm-phone"
+       data-track="phone_click" data-category="phone"
+       data-label="(630) 276-8596" data-click-location="mobile_menu"
+       data-destination-url="tel:6302768596">(630) 276-8596</a>
+    <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()"
+       data-track="phone_click" data-category="phone"
+       data-label="Llame Ahora" data-click-location="mobile_menu"
+       data-destination-url="tel:6302768596">¡Llame Ahora!</a>
   </div>
 
   <div class="above-fold">
@@ -227,8 +302,14 @@
         <span class="review-count">220+ Reseñas</span>
       </div>
       <div class="hero-btns">
-        <a href="#contact-info" class="btn-outline">Reservar en Línea</a>
-        <a href="tel:6302768596" class="btn-yellow">¡Llame Ahora!</a>
+        <a href="#contact-info" class="btn-outline"
+           data-track="nav_click" data-category="navigation"
+           data-label="Reservar en Línea" data-click-location="hero"
+           data-destination-url="#contact-info">Reservar en Línea</a>
+        <a href="tel:6302768596" class="btn-yellow"
+           data-track="phone_click" data-category="phone"
+           data-label="Llame Ahora" data-click-location="hero"
+           data-destination-url="tel:6302768596">¡Llame Ahora!</a>
       </div>
     </div>
   </section>
@@ -238,7 +319,10 @@
     <h2>¿QUÉ SERVICIO <span class="hl">NECESITA</span>?</h2>
     <p class="preview-sub">Desde cambios de aceite hasta reparación de motor — lo hacemos todo bajo un mismo techo.</p>
     <div class="services-thumb-grid">
-      <a href="/es/brakes/" class="service-thumb">
+      <a href="/es/brakes/" class="service-thumb"
+         data-track="service_click" data-category="service"
+         data-label="Frenos" data-service-type="brakes"
+         data-click-location="homepage_services_grid" data-destination-url="/es/brakes/">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="7"/>
           <line x1="24" y1="6" x2="24" y2="17"/><line x1="24" y1="31" x2="24" y2="42"/>
@@ -246,7 +330,10 @@
         </svg>
         <div class="thumb-name">Frenos</div>
       </a>
-      <a href="/es/ac-service/" class="service-thumb">
+      <a href="/es/ac-service/" class="service-thumb"
+         data-track="service_click" data-category="service"
+         data-label="Servicio de A/C" data-service-type="ac"
+         data-click-location="homepage_services_grid" data-destination-url="/es/ac-service/">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <line x1="24" y1="4" x2="24" y2="44"/><line x1="4" y1="24" x2="44" y2="24"/>
           <line x1="9.4" y1="9.4" x2="38.6" y2="38.6"/><line x1="38.6" y1="9.4" x2="9.4" y2="38.6"/>
@@ -254,14 +341,20 @@
         </svg>
         <div class="thumb-name">Servicio de A/C</div>
       </a>
-      <a href="/es/oil-changes/" class="service-thumb">
+      <a href="/es/oil-changes/" class="service-thumb"
+         data-track="service_click" data-category="service"
+         data-label="Cambios de Aceite" data-service-type="oil_change"
+         data-click-location="homepage_services_grid" data-destination-url="/es/oil-changes/">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M24 6 C20 13 10 24 10 31 a14 14 0 0 0 28 0 C38 24 28 13 24 6z"/>
           <path d="M17 35 Q22 30 27 35"/>
         </svg>
         <div class="thumb-name">Cambios de Aceite</div>
       </a>
-      <a href="/es/engine/" class="service-thumb">
+      <a href="/es/engine/" class="service-thumb"
+         data-track="service_click" data-category="service"
+         data-label="Servicio de Motor" data-service-type="engine"
+         data-click-location="homepage_services_grid" data-destination-url="/es/engine/">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="8"/>
           <rect x="20" y="2" width="8" height="8" rx="1"/><rect x="20" y="38" width="8" height="8" rx="1"/>
@@ -271,7 +364,10 @@
         </svg>
         <div class="thumb-name">Servicio de Motor</div>
       </a>
-      <a href="/es/tire-service/" class="service-thumb">
+      <a href="/es/tire-service/" class="service-thumb"
+         data-track="service_click" data-category="service"
+         data-label="Servicio de Llantas" data-service-type="tires"
+         data-click-location="homepage_services_grid" data-destination-url="/es/tire-service/">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="8"/>
           <line x1="24" y1="5" x2="24" y2="16"/><line x1="24" y1="32" x2="24" y2="43"/>
@@ -281,7 +377,10 @@
         </svg>
         <div class="thumb-name">Servicio de Llantas</div>
       </a>
-      <a href="/es/battery/" class="service-thumb">
+      <a href="/es/battery/" class="service-thumb"
+         data-track="service_click" data-category="service"
+         data-label="Servicio de Batería" data-service-type="battery"
+         data-click-location="homepage_services_grid" data-destination-url="/es/battery/">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round">
           <rect x="4" y="14" width="40" height="24" rx="2"/>
           <line x1="14" y1="10" x2="14" y2="14"/><line x1="10" y1="12" x2="18" y2="12"/>
@@ -290,7 +389,10 @@
         </svg>
         <div class="thumb-name">Servicio de Batería</div>
       </a>
-      <a href="/es/suspension/" class="service-thumb">
+      <a href="/es/suspension/" class="service-thumb"
+         data-track="service_click" data-category="service"
+         data-label="Servicio de Suspensión" data-service-type="suspension"
+         data-click-location="homepage_services_grid" data-destination-url="/es/suspension/">
         <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="#FFDA0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="24" y1="4" x2="24" y2="10"/>
           <polyline points="14,10 34,10 34,16 14,16 14,22 34,22 34,28 14,28"/>
@@ -310,22 +412,34 @@
       <h2>CONTACTO</h2>
       <div class="contact-row">
         <span class="ci-label">Dirección</span>
-        <span class="ci-val"><a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener">1919 Larkin Avenue, Elgin, IL 60123</a></span>
+        <span class="ci-val"><a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener"
+           data-track="location_click" data-category="location"
+           data-label="1919 Larkin Avenue" data-click-location="contact_section"
+           data-destination-url="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123">1919 Larkin Avenue, Elgin, IL 60123</a></span>
       </div>
       <div class="contact-row">
         <span class="ci-label">Teléfono</span>
-        <span class="ci-val"><a href="tel:6302768596">(630) 276-8596</a></span>
+        <span class="ci-val"><a href="tel:6302768596"
+           data-track="phone_click" data-category="phone"
+           data-label="(630) 276-8596" data-click-location="contact_section"
+           data-destination-url="tel:6302768596">(630) 276-8596</a></span>
       </div>
       <div class="contact-row">
         <span class="ci-label">Correo</span>
-        <span class="ci-val"><a href="mailto:baezauto1@gmail.com">baezauto1@gmail.com</a></span>
+        <span class="ci-val"><a href="mailto:baezauto1@gmail.com"
+           data-track="contact_click" data-category="contact"
+           data-label="baezauto1@gmail.com" data-click-location="contact_section"
+           data-destination-url="mailto:baezauto1@gmail.com">baezauto1@gmail.com</a></span>
       </div>
       <div class="hours-block">
         <h3>Horario</h3>
         <p>Lun–Vie &nbsp;&nbsp;&nbsp;9am – 7pm<br />Sábado &nbsp;&nbsp;9am – 4pm<br />Domingo &nbsp;Cerrado</p>
       </div>
       <br />
-      <a href="tel:6302768596" class="btn-yellow" style="margin-top:1rem">¡Llame Ahora!</a>
+      <a href="tel:6302768596" class="btn-yellow" style="margin-top:1rem"
+         data-track="phone_click" data-category="phone"
+         data-label="Llame Ahora" data-click-location="contact_section"
+         data-destination-url="tel:6302768596">¡Llame Ahora!</a>
     </div>
     <div>
       <iframe class="location-map" src="https://maps.google.com/maps?q=1919+Larkin+Ave,+Elgin,+IL+60123&output=embed&z=15" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Baez Auto Repair — 1919 Larkin Ave, Elgin IL"></iframe>
@@ -381,9 +495,18 @@
     <div>
       <div class="footer-logo">BAEZ</div>
       <div class="footer-links">
-        <a href="/services/">Servicios</a>
-        <a href="#contact-info">Ubicación</a>
-        <a href="#contact-info">Contáctenos</a>
+        <a href="/services/"
+           data-track="nav_click" data-category="navigation"
+           data-label="Servicios" data-click-location="footer"
+           data-destination-url="/services/">Servicios</a>
+        <a href="#contact-info"
+           data-track="nav_click" data-category="navigation"
+           data-label="Ubicación" data-click-location="footer"
+           data-destination-url="#contact-info">Ubicación</a>
+        <a href="#contact-info"
+           data-track="nav_click" data-category="navigation"
+           data-label="Contáctenos" data-click-location="footer"
+           data-destination-url="#contact-info">Contáctenos</a>
       </div>
     </div>
     <p class="footer-copy">© 2026 | Todos los Derechos Reservados | Elgin, IL</p>

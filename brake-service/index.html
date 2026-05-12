@@ -12,46 +12,99 @@
   <style>
     .hero-bg { background: url('/assets/building_back.jpg') center center / cover no-repeat; }
   </style>
+  <!-- Google tag (gtag.js) — GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVLNQ0MF32"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PVLNQ0MF32');
+  </script>
+  <script src="/tracking.js" defer></script>
 </head>
 <body>
   <nav>
-    <a href="/" class="logo">BAEZ</a>
+    <a href="/" class="logo"
+       data-track="nav_click" data-category="navigation" data-label="logo"
+       data-click-location="nav" data-destination-url="/">BAEZ</a>
     <div class="nav-center">
       <div class="nav-dropdown">
         <span class="dd-trigger">Services <span class="dd-arrow">▾</span></span>
         <div class="nav-dd-menu">
           <div class="nav-dd-inner">
-            <a href="/brake-service/">Brakes</a>
-            <a href="/ac-service/">A/C Service</a>
-            <a href="/oil-change/">Oil Changes</a>
-            <a href="/engine-service/">Engine Service</a>
-            <a href="/tire-service/">Tire Service</a>
-            <a href="/battery-service/">Battery Service</a>
-            <a href="/suspension-service/">Suspension Service</a>
+            <a href="/brake-service/"
+               data-track="service_click" data-category="service" data-label="Brakes"
+               data-service-type="brakes" data-click-location="nav_dropdown" data-destination-url="/brake-service/">Brakes</a>
+            <a href="/ac-service/"
+               data-track="service_click" data-category="service" data-label="A/C Service"
+               data-service-type="ac" data-click-location="nav_dropdown" data-destination-url="/ac-service/">A/C Service</a>
+            <a href="/oil-change/"
+               data-track="service_click" data-category="service" data-label="Oil Changes"
+               data-service-type="oil_change" data-click-location="nav_dropdown" data-destination-url="/oil-change/">Oil Changes</a>
+            <a href="/engine-service/"
+               data-track="service_click" data-category="service" data-label="Engine Service"
+               data-service-type="engine" data-click-location="nav_dropdown" data-destination-url="/engine-service/">Engine Service</a>
+            <a href="/tire-service/"
+               data-track="service_click" data-category="service" data-label="Tire Service"
+               data-service-type="tires" data-click-location="nav_dropdown" data-destination-url="/tire-service/">Tire Service</a>
+            <a href="/battery-service/"
+               data-track="service_click" data-category="service" data-label="Battery Service"
+               data-service-type="battery" data-click-location="nav_dropdown" data-destination-url="/battery-service/">Battery Service</a>
+            <a href="/suspension-service/"
+               data-track="service_click" data-category="service" data-label="Suspension Service"
+               data-service-type="suspension" data-click-location="nav_dropdown" data-destination-url="/suspension-service/">Suspension Service</a>
           </div>
         </div>
       </div>
-      <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener">Book Online</a>
-      <a href="/es/brakes/" class="lang-toggle">ES</a>
+      <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener"
+         data-track="booking_click" data-category="booking" data-label="Book Online"
+         data-click-location="nav" data-destination-url="https://calendly.com/baezauto1/30min">Book Online</a>
+      <a href="/es/brakes/" class="lang-toggle"
+         data-track="nav_click" data-category="navigation" data-label="lang_toggle_es"
+         data-click-location="nav" data-destination-url="/es/brakes/">ES</a>
     </div>
     <div class="nav-right">
-      <a href="tel:6302768596" class="nav-phone">(630) 276-8596</a>
+      <a href="tel:6302768596" class="nav-phone"
+         data-track="phone_click" data-category="phone" data-label="nav_phone"
+         data-click-location="nav" data-destination-url="tel:6302768596">(630) 276-8596</a>
       <span class="nav-hours">Mon–Fri 9–7pm &nbsp;·&nbsp; Sat 9–4pm &nbsp;·&nbsp; Sun Closed</span>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="/services/" onclick="closeMenu()">All Services</a>
-    <a href="/brake-service/" class="mm-sub" onclick="closeMenu()">↳ Brakes</a>
-    <a href="/ac-service/" class="mm-sub" onclick="closeMenu()">↳ A/C Service</a>
-    <a href="/oil-change/" class="mm-sub" onclick="closeMenu()">↳ Oil Changes</a>
-    <a href="/engine-service/" class="mm-sub" onclick="closeMenu()">↳ Engine Service</a>
-    <a href="/tire-service/" class="mm-sub" onclick="closeMenu()">↳ Tire Service</a>
-    <a href="/battery-service/" class="mm-sub" onclick="closeMenu()">↳ Battery Service</a>
-    <a href="/suspension-service/" class="mm-sub" onclick="closeMenu()">↳ Suspension Service</a>
-    <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" onclick="closeMenu()">Book Online</a>
-    <a href="tel:6302768596" class="mm-phone">(630) 276-8596</a>
-    <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()">Call Now!</a>
+    <a href="/services/" onclick="closeMenu()"
+       data-track="service_click" data-category="service" data-label="All Services"
+       data-service-type="all_services" data-click-location="mobile_menu" data-destination-url="/services/">All Services</a>
+    <a href="/brake-service/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service" data-label="Brakes"
+       data-service-type="brakes" data-click-location="mobile_menu" data-destination-url="/brake-service/">↳ Brakes</a>
+    <a href="/ac-service/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service" data-label="A/C Service"
+       data-service-type="ac" data-click-location="mobile_menu" data-destination-url="/ac-service/">↳ A/C Service</a>
+    <a href="/oil-change/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service" data-label="Oil Changes"
+       data-service-type="oil_change" data-click-location="mobile_menu" data-destination-url="/oil-change/">↳ Oil Changes</a>
+    <a href="/engine-service/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service" data-label="Engine Service"
+       data-service-type="engine" data-click-location="mobile_menu" data-destination-url="/engine-service/">↳ Engine Service</a>
+    <a href="/tire-service/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service" data-label="Tire Service"
+       data-service-type="tires" data-click-location="mobile_menu" data-destination-url="/tire-service/">↳ Tire Service</a>
+    <a href="/battery-service/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service" data-label="Battery Service"
+       data-service-type="battery" data-click-location="mobile_menu" data-destination-url="/battery-service/">↳ Battery Service</a>
+    <a href="/suspension-service/" class="mm-sub" onclick="closeMenu()"
+       data-track="service_click" data-category="service" data-label="Suspension Service"
+       data-service-type="suspension" data-click-location="mobile_menu" data-destination-url="/suspension-service/">↳ Suspension Service</a>
+    <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" onclick="closeMenu()"
+       data-track="booking_click" data-category="booking" data-label="Book Online"
+       data-click-location="mobile_menu" data-destination-url="https://calendly.com/baezauto1/30min">Book Online</a>
+    <a href="tel:6302768596" class="mm-phone"
+       data-track="phone_click" data-category="phone" data-label="mm_phone"
+       data-click-location="mobile_menu" data-destination-url="tel:6302768596">(630) 276-8596</a>
+    <a href="tel:6302768596" class="btn-yellow" onclick="closeMenu()"
+       data-track="phone_click" data-category="phone" data-label="Call Now"
+       data-click-location="mobile_menu" data-destination-url="tel:6302768596">Call Now!</a>
   </div>
 
   <section id="hero">
@@ -62,8 +115,12 @@
         <h1>YOUR SAFETY STARTS WITH YOUR BRAKES.</h1>
         <p class="hero-sub">Same-day brake inspections and repairs. We check everything — pads, rotors, calipers, and fluid — before recommending a single thing.</p>
         <div class="hero-btns">
-          <a href="tel:6302768596" class="btn-yellow">Call Now!</a>
-          <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" class="btn-outline">Book Online</a>
+          <a href="tel:6302768596" class="btn-yellow"
+             data-track="phone_click" data-category="phone" data-label="Call Now"
+             data-click-location="hero" data-destination-url="tel:6302768596">Call Now!</a>
+          <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" class="btn-outline"
+             data-track="booking_click" data-category="booking" data-label="Book Online"
+             data-click-location="hero" data-destination-url="https://calendly.com/baezauto1/30min">Book Online</a>
         </div>
         <div class="hero-stars">
           <span class="stars">★★★★★</span>
@@ -112,24 +169,38 @@
 
   <section id="cta">
     <h2>READY TO BRING IT IN?</h2>
-    <a href="tel:6302768596" class="btn-yellow-lg">Call (630) 276-8596</a>
+    <a href="tel:6302768596" class="btn-yellow-lg"
+       data-track="phone_click" data-category="phone" data-label="Call (630) 276-8596"
+       data-click-location="cta_section" data-destination-url="tel:6302768596">Call (630) 276-8596</a>
   </section>
 
   <section id="visit">
     <div class="visit-left">
       <h3>Visit Us</h3>
-      <p><a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener">1919 Larkin Avenue, Elgin, IL 60123</a><br /><a href="tel:6302768596">(630) 276-8596</a><br />Mon–Fri 9am–7pm &nbsp;|&nbsp; Sat 9am–4pm &nbsp;|&nbsp; Sun Closed</p>
+      <p><a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener"
+            data-track="location_click" data-category="location" data-label="1919 Larkin Avenue"
+            data-click-location="visit_strip" data-destination-url="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123">1919 Larkin Avenue, Elgin, IL 60123</a><br /><a href="tel:6302768596"
+            data-track="phone_click" data-category="phone" data-label="visit_phone"
+            data-click-location="visit_strip" data-destination-url="tel:6302768596">(630) 276-8596</a><br />Mon–Fri 9am–7pm &nbsp;|&nbsp; Sat 9am–4pm &nbsp;|&nbsp; Sun Closed</p>
     </div>
-    <a href="tel:6302768596" class="btn-yellow">Call Now!</a>
+    <a href="tel:6302768596" class="btn-yellow"
+       data-track="phone_click" data-category="phone" data-label="Call Now"
+       data-click-location="visit_strip" data-destination-url="tel:6302768596">Call Now!</a>
   </section>
 
   <footer>
     <div>
       <div class="footer-logo">BAEZ</div>
       <div class="footer-links">
-        <a href="/services/">Services</a>
-        <a href="/#contact-info">Location</a>
-        <a href="/#contact-info">Contact Us</a>
+        <a href="/services/"
+           data-track="nav_click" data-category="navigation" data-label="Services"
+           data-click-location="footer" data-destination-url="/services/">Services</a>
+        <a href="/#contact-info"
+           data-track="nav_click" data-category="navigation" data-label="Location"
+           data-click-location="footer" data-destination-url="/#contact-info">Location</a>
+        <a href="/#contact-info"
+           data-track="nav_click" data-category="navigation" data-label="Contact Us"
+           data-click-location="footer" data-destination-url="/#contact-info">Contact Us</a>
       </div>
     </div>
     <p class="footer-copy">© 2026 | All Rights Reserved | Elgin, IL</p>

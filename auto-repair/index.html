@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baez Auto Repair — Elgin, IL | Honest Same-Day Service</title>
   <meta name="description" content="Need your car fixed reliably? Baez Auto Repair in Elgin, IL. Honest service, same-day repairs. Suspension, Engine, Brakes & more. Call (630) 276-8596." />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17773130944"></script>
+  <!-- Google tag (gtag.js) — GA4 + Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVLNQ0MF32"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('config', 'G-PVLNQ0MF32');
     gtag('config', 'AW-17773130944');
   </script>
-  <!-- Click-to-call conversion -->
+  <!-- Click-to-call conversion (Google Ads) -->
   <script>
   function gtag_report_conversion(url) {
     var callback = function () {
@@ -28,6 +29,7 @@
     return false;
   }
   </script>
+  <script src="/tracking.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -133,15 +135,32 @@
 <body>
 
   <nav>
-    <a href="/" class="logo">BAEZ</a>
-    <a href="tel:6302768596" class="nav-phone" onclick="return gtag_report_conversion('tel:6302768596');">(630) 276-8596</a>
+    <a href="/" class="logo"
+       data-track="nav_click" data-category="navigation"
+       data-label="logo_home" data-click-location="nav"
+       data-destination-url="/">BAEZ</a>
+    <a href="tel:6302768596" class="nav-phone"
+       onclick="return gtag_report_conversion('tel:6302768596');"
+       data-track="phone_click" data-category="phone"
+       data-label="(630) 276-8596" data-click-location="nav"
+       data-destination-url="tel:6302768596">(630) 276-8596</a>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="/services/" onclick="closeMenu()">Services</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-    <a href="tel:6302768596" class="mm-phone" onclick="return gtag_report_conversion('tel:6302768596');">(630) 276-8596</a>
+    <a href="/services/" onclick="closeMenu()"
+       data-track="nav_click" data-category="navigation"
+       data-label="Services" data-click-location="mobile_menu"
+       data-destination-url="/services/">Services</a>
+    <a href="#contact" onclick="closeMenu()"
+       data-track="nav_click" data-category="navigation"
+       data-label="Contact" data-click-location="mobile_menu"
+       data-destination-url="#contact">Contact</a>
+    <a href="tel:6302768596" class="mm-phone"
+       onclick="return gtag_report_conversion('tel:6302768596');"
+       data-track="phone_click" data-category="phone"
+       data-label="(630) 276-8596" data-click-location="mobile_menu"
+       data-destination-url="tel:6302768596">(630) 276-8596</a>
   </div>
 
   <!-- Hero -->
@@ -151,7 +170,11 @@
       <div class="location-badge">Elgin Residents</div>
       <h1>NEED YOUR CAR FIXED <span class="hl">RELIABLY?</span></h1>
       <p class="hero-body">Baez Auto has been providing honest service in Elgin for years. Call us today and we'll get you in. Suspension, Engine, Brakes — whatever you need.</p>
-      <a href="tel:6302768596" class="btn-call" onclick="return gtag_report_conversion('tel:6302768596');">Call Now — (630) 276-8596</a>
+      <a href="tel:6302768596" class="btn-call"
+         onclick="return gtag_report_conversion('tel:6302768596');"
+         data-track="phone_click" data-category="phone"
+         data-label="Call Now" data-click-location="hero"
+         data-destination-url="tel:6302768596">Call Now — (630) 276-8596</a>
       <div class="hero-stars">
         <span class="stars">★★★★★</span>
         <span class="review-count">220+ Reviews</span>
@@ -164,15 +187,25 @@
     <h2>CONTACT</h2>
     <div class="contact-item">
       <span class="contact-icon">📍</span>
-      <a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener">1919 Larkin Avenue, Elgin, IL 60123</a>
+      <a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener"
+         data-track="location_click" data-category="location"
+         data-label="1919 Larkin Avenue" data-click-location="contact_section"
+         data-destination-url="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123">1919 Larkin Avenue, Elgin, IL 60123</a>
     </div>
     <div class="contact-item">
       <span class="contact-icon">📞</span>
-      <a href="tel:6302768596" onclick="return gtag_report_conversion('tel:6302768596');">(630) 276-8596</a>
+      <a href="tel:6302768596"
+         onclick="return gtag_report_conversion('tel:6302768596');"
+         data-track="phone_click" data-category="phone"
+         data-label="(630) 276-8596" data-click-location="contact_section"
+         data-destination-url="tel:6302768596">(630) 276-8596</a>
     </div>
     <div class="contact-item">
       <span class="contact-icon">✉️</span>
-      <a href="mailto:baezauto1@gmail.com">baezauto1@gmail.com</a>
+      <a href="mailto:baezauto1@gmail.com"
+         data-track="contact_click" data-category="contact"
+         data-label="baezauto1@gmail.com" data-click-location="contact_section"
+         data-destination-url="mailto:baezauto1@gmail.com">baezauto1@gmail.com</a>
     </div>
   </section>
 
@@ -234,7 +267,10 @@
   <!-- CTA -->
   <section id="cta-strip">
     <h2>CONTACT OUR TEAM</h2>
-    <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" class="btn-book">Book Online</a>
+    <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" class="btn-book"
+       data-track="booking_click" data-category="booking"
+       data-label="Book Online" data-click-location="cta_section"
+       data-destination-url="https://calendly.com/baezauto1/30min">Book Online</a>
   </section>
 
   <!-- Footer -->
@@ -242,9 +278,18 @@
     <div>
       <div class="footer-logo">BAEZ</div>
       <div class="footer-links">
-        <a href="/services/">Services</a>
-        <a href="#contact">Location</a>
-        <a href="#contact">Contact Us</a>
+        <a href="/services/"
+           data-track="nav_click" data-category="navigation"
+           data-label="Services" data-click-location="footer"
+           data-destination-url="/services/">Services</a>
+        <a href="#contact"
+           data-track="nav_click" data-category="navigation"
+           data-label="Location" data-click-location="footer"
+           data-destination-url="#contact">Location</a>
+        <a href="#contact"
+           data-track="nav_click" data-category="navigation"
+           data-label="Contact Us" data-click-location="footer"
+           data-destination-url="#contact">Contact Us</a>
       </div>
     </div>
     <p class="footer-copy">© 2026 | All Rights Reserved | Elgin, IL</p>
