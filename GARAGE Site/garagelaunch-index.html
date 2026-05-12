@@ -34,7 +34,7 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 6vw;
+      padding: 0 max(5vw, calc((100% - 1200px) / 2));
       height: 68px;
       background: rgba(10,10,10,.92);
       backdrop-filter: blur(16px);
@@ -59,8 +59,11 @@
     .nav-links { display: flex; gap: 2.4rem; }
     .nav-links a {
       color: var(--muted);
+      font-family: 'Oswald', sans-serif;
       font-size: .875rem;
-      font-weight: 500;
+      font-weight: 550;
+      letter-spacing: .09em;
+      text-transform: uppercase;
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--text); }
@@ -85,7 +88,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 140px 6vw 100px;
+      padding: 140px max(5vw, calc((100% - 1200px) / 2)) 100px;
       max-width: 100%;
       position: relative;
       overflow: hidden;
@@ -175,8 +178,8 @@
 
     .btn-ghost {
       display: inline-block;
-      border: 1px solid var(--border);
-      color: var(--muted);
+      border: 1px solid var(--muted);
+      color: var(--text);
       padding: .9rem 2rem;
       border-radius: 6px;
       font-weight: 600;
@@ -189,7 +192,7 @@
     .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
     /* ── Section base ── */
-    section { padding: 100px 6vw; }
+    section { padding: 100px max(5vw, calc((100% - 1200px) / 2)); }
 
     .section-label {
       font-size: .68rem;
@@ -437,7 +440,7 @@
     /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 2rem 6vw;
+      padding: 2rem max(5vw, calc((100% - 1200px) / 2));
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -478,7 +481,7 @@
       left: 0; right: 0;
       background: rgba(10,10,10,.97);
       border-bottom: 1px solid var(--border);
-      padding: 1.5rem 6vw 2rem;
+      padding: 1.5rem max(5vw, calc((100% - 1200px) / 2)) 2rem;
       z-index: 99;
       flex-direction: column;
       gap: 1.4rem;
@@ -498,8 +501,8 @@
       .hamburger { display: flex; }
       #story { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; }
-      section { padding: 80px 5vw; }
-      #hero { padding: 120px 5vw 80px; }
+      section { padding: 80px max(5vw, calc((100% - 1200px) / 2)); }
+      #hero { padding: 120px max(5vw, calc((100% - 1200px) / 2)) 80px; }
     }
   </style>
 </head>
@@ -537,61 +540,18 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <span class="eyebrow">Solutions for your Independent Auto Shop</span>
-      <h1>Modernize your shop.<br /><span class="yellow">Tech to tech.</span></h1>
+      <h1><span style="white-space: nowrap;">Modernize your shop.</span><br /><span class="yellow">Tech to tech.</span></h1>
       <p class="hero-sub">
         Tired of weeks without work or the bank account looking rough?  Your online presence (or lack thereof) may be the culprit.  Our online solutions are desinged to get you more calls and cash. We're not an agency - we're a shop family.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Work With Us</a>
-        <a href="#story" class="btn-ghost">Our Story</a>
+        <a href="#why" class="btn-ghost">Why Us?</a>
       </div>
     </div>
   </section>
 
   <hr class="divider" />
-
-  <!-- Story -->
-  <section id="story">
-    <div class="story-text">
-      <p class="section-label">Our Story</p>
-      <h2>We're not an agency.<br />We're a shop family.</h2>
-      <div style="margin-top:1.4rem">
-        <p>
-          My father Oscar has been turning wrenches his whole life. Baez Auto Repair in Elgin, IL
-          is how our family paid the mortgage, took trips, bought cars, and built something real
-          from nothing.
-        </p>
-        <p>
-          I watched him lose leads because there was no system. Calls that didn't convert.
-          Estimates that went cold. Customers who never came back. So I built the tools to fix it —
-          a dashboard, an analytics system, ad tracking tied to real repair orders.
-        </p>
-        <p>
-          Now we help other independent shops do the same. We know what an RO is.
-          We know how parts ordering works. We know what actually matters at the end of the week.
-        </p>
-      </div>
-    </div>
-
-    <div class="story-stat-grid">
-      <div class="story-stat">
-        <div class="num">231</div>
-        <div class="label">Jobs tracked all-time</div>
-      </div>
-      <div class="story-stat">
-        <div class="num">$139K</div>
-        <div class="label">Revenue tracked</div>
-      </div>
-      <div class="story-stat">
-        <div class="num">10+</div>
-        <div class="label">Years in the shop</div>
-      </div>
-      <div class="story-stat">
-        <div class="num">1</div>
-        <div class="label">Family behind it all</div>
-      </div>
-    </div>
-  </section>
 
   <!-- Services -->
   <section id="services">
@@ -628,7 +588,7 @@
       <div class="service-card">
         <div class="service-name">Business Cards</div>
         <p class="service-desc">Sharp, professional design. Print-ready files delivered fast.</p>
-        <div class="service-price">$150 <span>one-time</span></div>
+        <div class="service-price">$250 <span>one-time</span></div>
       </div>
     </div>
   </section>
@@ -658,6 +618,49 @@
         <div class="why-num">04</div>
         <h3>Direct</h3>
         <p>You talk to the person doing the work. No account managers, no handoffs, no runaround. One call, one person, done.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section id="story">
+    <div class="story-text">
+      <p class="section-label">Our Story</p>
+      <h2>We're not an agency.<br />We're a shop family.</h2>
+      <div style="margin-top:1.4rem">
+        <p>
+          My dad has been turning wrenches his whole life. Baez Auto Repair in Elgin, IL
+          is how our family paid the mortgage, bought my first car, and built something real
+          from nothing.
+        </p>
+        <p>
+          I watched him lose leads because there was no system. Calls that didn't convert.
+          Estimates that went cold. Customers who never came back. So I built the tools to fix it —
+          a dashboard, an analytics system, ad tracking tied to real repair orders.
+        </p>
+        <p>
+          Now we help other independent shops do the same. We know what an RO is.
+          We know how parts ordering works. We know what actually matters at the end of the week.
+        </p>
+      </div>
+    </div>
+
+    <div class="story-stat-grid">
+      <div class="story-stat">
+        <div class="num">231</div>
+        <div class="label">Jobs tracked all-time</div>
+      </div>
+      <div class="story-stat">
+        <div class="num">$139K</div>
+        <div class="label">Revenue tracked</div>
+      </div>
+      <div class="story-stat">
+        <div class="num">10+</div>
+        <div class="label">Years in the shop</div>
+      </div>
+      <div class="story-stat">
+        <div class="num">1</div>
+        <div class="label">Family behind it all</div>
       </div>
     </div>
   </section>
@@ -702,14 +705,8 @@
   <!-- Footer -->
   <footer>
     <div class="logo">
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px">
-        <rect x="0" y="0" width="9" height="40" fill="#f5c400"/>
-        <rect x="9" y="31" width="31" height="9" fill="#f5c400"/>
-        <rect x="9" y="0" width="31" height="9" fill="#fff"/>
-        <rect x="31" y="9" width="9" height="14" fill="#fff"/>
-        <rect x="20" y="14" width="20" height="9" fill="#fff"/>
-      </svg>
-      Garage Launch
+      <img src="logo-dark.svg" alt="Garage Launch emblem">
+      Garage <span>Launch</span>
     </div>
     <p>Built by Baez Auto Repair · Elgin, IL</p>
     <p>danny@garagelaunch.com</p>
