@@ -55,7 +55,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 max(5vw, calc((100% - 1200px) / 2)); height: 96px;
-      background: rgba(0,0,0,0.96); border-bottom: 1px solid var(--border);
+      background: var(--black); border-bottom: 1px solid var(--border);
       will-change: transform;
     }
     .logo { font-family: 'Oswald', sans-serif; font-size: 2.6rem; font-weight: 700; color: var(--yellow); letter-spacing: .1em; }
@@ -95,7 +95,7 @@
     /* ── Above-fold wrapper ── */
     .above-fold { display: flex; flex-direction: column; min-height: 100vh; }
     /* ── Hero ── */
-    #hero { position: relative; min-height: calc(100vh - 96px); display: flex; flex-direction: column; justify-content: center; padding: 140px max(5vw, calc((100% - 1200px) / 2)) 60px; overflow: hidden; }    .hero-bg { position: absolute; inset: 0; background: url('/assets/building_back.jpg') center center / cover no-repeat; z-index: 0; }
+    #hero { position: relative; min-height: calc(100vh - 96px); display: flex; flex-direction: column; justify-content: center; padding: 140px max(5vw, calc((100% - 1200px) / 2)) 60px; overflow: hidden; }    .hero-bg { position: absolute; inset: 0; background: url('assets/building_back.jpg') center center / cover no-repeat; z-index: 0; }
     .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.28) 100%); }
     .hero-content { position: relative; z-index: 1; max-width: 620px; }
     h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 700; line-height: 1; letter-spacing: .01em; text-transform: uppercase; margin-bottom: .75rem; }
@@ -125,7 +125,7 @@
     .why-card p { font-size: .9rem; color: var(--muted); line-height: 1.75; }
 
     /* ── Services preview ── */
-    #services-preview { background: var(--black); padding: 18px max(5vw, calc((100% - 1200px) / 2)) 22px; }
+    #services-preview { background: var(--bl); padding: 18px max(5vw, calc((100% - 1200px) / 2)) 22px; }
     #services-preview h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; margin-bottom: .4rem; }
     #services-preview h2 .hl { color: var(--yellow); }
     .preview-sub { color: var(--muted); font-size: .85rem; margin-bottom: 1.2rem; }
