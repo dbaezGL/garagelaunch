@@ -59,7 +59,7 @@
     .nav-links { display: flex; gap: 2.4rem; }
     .nav-links a {
       color: var(--muted);
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: .875rem;
       font-weight: 550;
       letter-spacing: .09em;
@@ -254,7 +254,7 @@
       font-weight: 500;
     }
 
-    /* ── Services ── */
+    /* ── Services ── 
     #services { border-top: 1px solid var(--border); }
 
     .services-grid {
@@ -325,8 +325,8 @@
       font-weight: 700;
       color: var(--muted);
       margin-top: .3rem;
-    }
-
+    }*/
+    
     /* ── Why ── */
     #why { border-top: 1px solid var(--border); }
 
@@ -337,18 +337,22 @@
       margin-top: 3rem;
     }
 
-    .why-item h3 {
+    .why-item h2 {
       font-family: 'Oswald', sans-serif;
       font-size: 1rem;
       font-weight: 700;
+      color: var(--text);
       text-transform: uppercase;
       letter-spacing: .06em;
       margin-bottom: .5rem;
     }
 
     .why-item p {
+      font-family: 'Inter', sans-serif;
       font-size: .9rem;
+      font-weight: 500;
       color: var(--muted);
+      text-transform: none;
       line-height: 1.7;
     }
 
@@ -356,14 +360,17 @@
       font-family: 'Oswald', sans-serif;
       font-size: 2.4rem;
       font-weight: 700;
-      color: var(--border);
+      color: var(--yellow);
       letter-spacing: .01em;
       line-height: 1;
       margin-bottom: .8rem;
     }
 
     /* ── Contact ── */
-    #contact { border-top: 1px solid var(--border); }
+    #contact { 
+      border-top: 1px solid var(--yellow); 
+      background: var(--yellow2);
+    }
 
     .contact-inner {
       display: grid;
@@ -373,7 +380,7 @@
     }
 
     .contact-left p {
-      color: var(--muted);
+      color: var(--text);
       font-size: 1rem;
       line-height: 1.8;
       margin-top: 1rem;
@@ -388,7 +395,8 @@
 
     .contact-detail span {
       font-size: .875rem;
-      color: var(--muted);
+      font-weight: 600;
+      color: var(--bg);
     }
 
     .contact-detail strong {
@@ -553,26 +561,26 @@
         <div class="hero-text-card">
           <h2><span style="white-space: nowrap;">Get Found. Get Calls.</span><br /><span class="yellow"></span></h2>
           <p class="hero-sub">
-            As part of an auto repair family, I've seen the impact that simple online tools and marketing can make on an auto business. Your customers may not know you exist when searching for your services.
+            As part of an auto repair family, I've seen the impact that simple online tools and marketing can make on a small automotive business. Your customers may not know you exist when searching for your services.
           </p>
         </div>
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">Reach Out</a>
-          <a href="#why" class="btn-ghost">Why Me?</a>
+          <a href="#why" class="btn-ghost">About</a>
         </div>
       </div>
       <div class="hero-services">
-        <p class="hero-services-label">What We Do</p>
+        <p class="hero-services-label">What We Can Do</p>
         <div class="hero-services-grid">
           <div class="hero-service-item">
             <div class="check">✓</div>
-            <h3>Website Setup</h3>
-            <p>Domain, 5-page site, and Google Business Profile — done in one week, not one month.</p>
+            <h3>Web Setup</h3>
+            <p>Domain, 5-page site, and Google Business Profile done by the end of the week.</p>
           </div>
           <div class="hero-service-item">
             <div class="check">✓</div>
             <h3>Google Search Ads</h3>
-            <p>Setup and monthly management. Every dollar tracked back to real calls, not just clicks.</p>
+            <p>Setup and monthly management. Find your customers when they search for your services.</p>
           </div>
           <div class="hero-service-item">
             <div class="check">✓</div>
@@ -581,8 +589,8 @@
           </div>
           <div class="hero-service-item">
             <div class="check">✓</div>
-            <h3>Full Package</h3>
-            <p>Website plus Google Ads together. One partner, one bill, one less thing on your plate.</p>
+            <h3>Business Cards and Fliers</h3>
+            <p>Sharp designs with your business information. Get your branding out there.</p>
           </div>
         </div>
       </div>
@@ -631,9 +639,11 @@
     </div>
   </section>-->
 
+  <!--Proof of concept-->
+
   <!-- Why -->
   <section id="why">
-    <h2>So why choose us?<br />
+    <h2>So why choose us?</h2><br />
 
     <div class="why-grid">
       <div class="why-item">
@@ -659,7 +669,9 @@
     </div>
   </section>
 
-  <!-- Story -->
+
+
+  <!-- Story
   <section id="story">
     <div class="story-text">
       <p class="section-label">Our Story</p>
@@ -696,7 +708,7 @@
         <div class="label">Family behind it all</div>
       </div>
     </div>
-  </section>
+  </section>-->
 
   <!-- Contact -->
   <section id="contact">
@@ -709,9 +721,9 @@
           no pitch, just a real conversation about your shop.
         </p>
         <div class="contact-detail">
-          <span>Email <strong>danny@garagelaunch.co</strong></span>
-          <span>Based in <strong>Elgin, IL</strong></span>
-          <span>Working with <strong>independent shop owners</strong></span>
+          <span>Email: <strong>danny@garagelaunch.co</strong></span>
+          <span>Based in: <strong>Elgin, IL</strong></span>
+          <span>Working with: <strong>automotive business owners</strong></span>
         </div>
       </div>
 
