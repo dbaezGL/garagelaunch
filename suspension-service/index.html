@@ -19,6 +19,22 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-PVLNQ0MF32');
+    gtag('config', 'AW-17773130944');
+  </script>
+  <!-- Click-to-call conversion (Google Ads) -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17773130944/5iyFCIKunakcEMDp8ZpC',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+    });
+    return false;
+  }
   </script>
   <script src="/tracking.js" defer></script>
 </head>
@@ -64,7 +80,8 @@
          data-click-location="nav" data-destination-url="/es/suspension/">ES</a>
     </div>
     <div class="nav-right">
-      <a href="tel:2244073196" class="nav-phone"
+      <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="nav-phone"
          data-track="phone_click" data-category="phone" data-label="nav_phone"
          data-click-location="nav" data-destination-url="tel:2244073196">(224) 407-3196</a>
       <span class="nav-hours">Mon–Fri 9–7pm &nbsp;·&nbsp; Sat 9–4pm &nbsp;·&nbsp; Sun Closed</span>
@@ -99,10 +116,11 @@
     <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" onclick="closeMenu()"
        data-track="booking_click" data-category="booking" data-label="Book Online"
        data-click-location="mobile_menu" data-destination-url="https://calendly.com/baezauto1/30min">Book Online</a>
-    <a href="tel:2244073196" class="mm-phone"
+    <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="mm-phone"
        data-track="phone_click" data-category="phone" data-label="mm_phone"
        data-click-location="mobile_menu" data-destination-url="tel:2244073196">(224) 407-3196</a>
-    <a href="tel:2244073196" class="btn-yellow" onclick="closeMenu()"
+    <a href="tel:2244073196" class="btn-yellow" onclick="closeMenu(); return gtag_report_conversion('tel:2244073196');"
        data-track="phone_click" data-category="phone" data-label="Call Now"
        data-click-location="mobile_menu" data-destination-url="tel:2244073196">Call Now!</a>
   </div>
@@ -115,7 +133,8 @@
         <h1>CAR NOT DRIVING RIGHT? WE'LL FIX IT.</h1>
         <p class="hero-sub">Honest suspension diagnostics and repair — shocks, struts, tie rods, ball joints. We tell you what's actually wrong before we touch anything.</p>
         <div class="hero-btns">
-          <a href="tel:2244073196" class="btn-yellow"
+          <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="btn-yellow"
              data-track="phone_click" data-category="phone" data-label="Call Now"
              data-click-location="hero" data-destination-url="tel:2244073196">Call Now!</a>
           <a href="https://calendly.com/baezauto1/30min" target="_blank" rel="noopener" class="btn-outline"
@@ -169,7 +188,8 @@
 
   <section id="cta">
     <h2>READY TO BRING IT IN?</h2>
-    <a href="tel:2244073196" class="btn-yellow-lg"
+    <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="btn-yellow-lg"
        data-track="phone_click" data-category="phone" data-label="Call (224) 407-3196"
        data-click-location="cta_section" data-destination-url="tel:2244073196">Call (224) 407-3196</a>
   </section>
@@ -180,10 +200,12 @@
       <p><a href="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123" target="_blank" rel="noopener"
             data-track="location_click" data-category="location" data-label="1919 Larkin Avenue"
             data-click-location="visit_strip" data-destination-url="https://maps.google.com/?q=1919+Larkin+Ave+Elgin+IL+60123">1919 Larkin Avenue, Elgin, IL 60123</a><br /><a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');"
             data-track="phone_click" data-category="phone" data-label="visit_phone"
             data-click-location="visit_strip" data-destination-url="tel:2244073196">(224) 407-3196</a><br />Mon–Fri 9am–7pm &nbsp;|&nbsp; Sat 9am–4pm &nbsp;|&nbsp; Sun Closed</p>
     </div>
-    <a href="tel:2244073196" class="btn-yellow"
+    <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="btn-yellow"
        data-track="phone_click" data-category="phone" data-label="Call Now"
        data-click-location="visit_strip" data-destination-url="tel:2244073196">Call Now!</a>
   </section>
