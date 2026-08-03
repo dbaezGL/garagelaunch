@@ -12,6 +12,22 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-PVLNQ0MF32');
+    gtag('config', 'AW-17773130944');
+  </script>
+  <!-- Click-to-call conversion (Google Ads) -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17773130944/5iyFCIKunakcEMDp8ZpC',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+    });
+    return false;
+  }
   </script>
   <script src="/tracking.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -233,7 +249,8 @@
          data-destination-url="/">EN</a>
     </div>
     <div class="nav-right">
-      <a href="tel:2244073196" class="nav-phone"
+      <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="nav-phone"
          data-track="phone_click" data-category="phone"
          data-label="(224) 407-3196" data-click-location="nav"
          data-destination-url="tel:2244073196">(224) 407-3196</a>
@@ -280,11 +297,12 @@
        data-track="nav_click" data-category="navigation"
        data-label="Reservar en Línea" data-click-location="mobile_menu"
        data-destination-url="#contact-info">Reservar en Línea</a>
-    <a href="tel:2244073196" class="mm-phone"
+    <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="mm-phone"
        data-track="phone_click" data-category="phone"
        data-label="(224) 407-3196" data-click-location="mobile_menu"
        data-destination-url="tel:2244073196">(224) 407-3196</a>
-    <a href="tel:2244073196" class="btn-yellow" onclick="closeMenu()"
+    <a href="tel:2244073196" class="btn-yellow" onclick="closeMenu(); return gtag_report_conversion('tel:2244073196');"
        data-track="phone_click" data-category="phone"
        data-label="Llame Ahora" data-click-location="mobile_menu"
        data-destination-url="tel:2244073196">¡Llame Ahora!</a>
@@ -306,7 +324,8 @@
            data-track="nav_click" data-category="navigation"
            data-label="Reservar en Línea" data-click-location="hero"
            data-destination-url="#contact-info">Reservar en Línea</a>
-        <a href="tel:2244073196" class="btn-yellow"
+        <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="btn-yellow"
            data-track="phone_click" data-category="phone"
            data-label="Llame Ahora" data-click-location="hero"
            data-destination-url="tel:2244073196">¡Llame Ahora!</a>
@@ -420,6 +439,7 @@
       <div class="contact-row">
         <span class="ci-label">Teléfono</span>
         <span class="ci-val"><a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');"
            data-track="phone_click" data-category="phone"
            data-label="(224) 407-3196" data-click-location="contact_section"
            data-destination-url="tel:2244073196">(224) 407-3196</a></span>
@@ -436,7 +456,8 @@
         <p>Lun–Vie &nbsp;&nbsp;&nbsp;9am – 7pm<br />Sábado &nbsp;&nbsp;9am – 4pm<br />Domingo &nbsp;Cerrado</p>
       </div>
       <br />
-      <a href="tel:2244073196" class="btn-yellow" style="margin-top:1rem"
+      <a href="tel:2244073196"
+         onclick="return gtag_report_conversion('tel:2244073196');" class="btn-yellow" style="margin-top:1rem"
          data-track="phone_click" data-category="phone"
          data-label="Llame Ahora" data-click-location="contact_section"
          data-destination-url="tel:2244073196">¡Llame Ahora!</a>
